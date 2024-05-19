@@ -22,7 +22,7 @@ body {
 .form-heading {
   color: #07074d;
   font-weight: 1000;
-  font-size: 24px;
+  font-size: 3vmin;
 }
 .form-wrapper {
   margin: 0 auto;
@@ -33,13 +33,13 @@ body {
 .form-label {
   display: block;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1.75vmin;
   color: #07074d;
   margin-bottom: 12px;
 }
 .form-label-2 {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 2.2vmin;
   margin-bottom: 20px;
 }
 .form-input {
@@ -49,7 +49,7 @@ body {
   border: 1px solid #e0e0e0;
   background: white;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1.75vmin;
   color: #6b7280;
   outline: none;
   resize: none;
@@ -77,7 +77,7 @@ body {
 .radio-group label {
   background-color: #e4e4e4;
   color: rgba(0, 0, 0, 0.6);
-  font-size: 14px;
+  font-size: 1.6vmin;
   line-height: 1;
   text-align: center;
   padding: 8px 16px;
