@@ -1,0 +1,234 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+}
+.mb-5 {
+  margin-bottom: 20px;
+}
+.pt-3 {
+  padding-top: 12px;
+}
+.main-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+}
+.form-heading {
+  color: #07074d;
+  font-weight: 1000;
+  font-size: 24px;
+}
+.form-wrapper {
+  margin: 0 auto;
+  max-width: 550px;
+  width: 100%;
+  background: white;
+}
+.form-label {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  color: #07074d;
+  margin-bottom: 12px;
+}
+.form-label-2 {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.form-input {
+  width: 100%;
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  background: white;
+  font-weight: 500;
+  font-size: 16px;
+  color: #6b7280;
+  outline: none;
+  resize: none;
+}
+.form-input:focus {
+  border-color: #6a64f1;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* .switch-field {
+  display: flex;
+  margin-bottom: 36px;
+  overflow: hidden;
+} */
+
+.radio-group input {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+}
+
+.radio-group label {
+  background-color: #e4e4e4;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  padding: 8px 16px;
+  margin-right: -1px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.1s ease-in-out;
+}
+
+.radio-group label:hover {
+  cursor: pointer;
+}
+
+.radio-group input:checked + label {
+  background-color: #a5dc86;
+  box-shadow: none;
+}
+
+/* Don't care */
+.radio-group input[value="0"]:checked + label {
+  background-color: #ffd97d;
+  box-shadow: none;
+}
+/* Gerne */
+.radio-group input[value="1"]:checked + label {
+  background-color: #aaf683;
+  box-shadow: none;
+}
+/* Unbedingt */
+.radio-group input[value="2"]:checked + label {
+  background-color: #60d394;
+  box-shadow: none;
+}
+/* Erforderlich */
+.radio-group input[value="3"]:checked + label {
+  background-color: #ee6055;
+  box-shadow: none;
+}
+
+.radio-group label:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.radio-group label:last-of-type {
+  border-radius: 0 4px 4px 0;
+}
+
+.radio-group legend {
+    color: #07074d;
+    margin-bottom: 12px;
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+}
+.radio-group {
+    margin-bottom: 20px;
+}
+
+.radio-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* .radio-label {
+  font-size: 14px;
+  line-height: 24px;
+  color: #07074d;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.input-radio {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.radio-checkmark {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #ffffff;
+  border: 1px solid #dde3ec;
+  border-radius: 50%;
+}
+.radio-label
+  .input-radio:checked
+  ~ .radio-checkmark {
+  background-color: #6a64f1;
+}
+.radio-checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.radio-label
+  .input-radio:checked
+  ~ .radio-checkmark:after {
+  display: block;
+}
+
+.radio-label .radio-checkmark:after {
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffffff;
+  transform: translate(-50%, -50%);
+} */
+.btn {
+  text-align: center;
+  font-size: 16px;
+  border-radius: 6px;
+  padding: 14px 32px;
+  border: none;
+  font-weight: 600;
+  background-color: #6a64f1;
+  color: white;
+  width: 100%;
+  cursor: pointer;
+}
+.btn:hover {
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.mx-3 {
+  margin-left: -12px;
+  margin-right: -12px;
+}
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.flex {
+  display: flex;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.w-full {
+  width: 100%;
+}
+@media (min-width: 540px) {
+  .sm\:w-half {
+    width: 50%;
+  }
+}

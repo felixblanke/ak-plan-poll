@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main-wrapper">
+    <div class="form-wrapper">
+    <div class="mb-5">
+        <p class="form-heading">AK-Präferenzen KoMa90</p>
+    </div>
+      <form action="http://localhost:5555/poll" method="POST">
+        <label class="form-label form-label-2">
+            Grunddaten
+        </label>
+        <div class="mb-5">
+          <label for="name" class="form-label"> Dein Name </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Name"
+            class="form-input"
+          />
+        </div>
+        <div class="mb-5">
+            <label for="uni" class="form-label"> Deine Hochschule </label>
+            <input
+              type="text"
+              name="uni"
+              id="uni"
+              placeholder="Hochschule"
+              class="form-input"
+            />
+        </div>
+        <label class="form-label form-label-2">
+            AK Präferenzen
+        </label>
+
+        <div class="radio-flex">
+            <div class="radio-group">
+                <legend>AK0</legend>
+                <input type="radio" id="ak0-radio0" name="ak0" value="0" checked/>
+                <label for="ak0-radio0">Don't care</label>
+                <input type="radio" id="ak0-radio1" name="ak0" value="1"/>
+                <label for="ak0-radio1">Gerne</label>
+                <input type="radio" id="ak0-radio2" name="ak0" value="2"/>
+                <label for="ak0-radio2">Unbedingt</label>
+                <input type="radio" id="ak0-radio3" name="ak0" value="3"/>
+                <label for="ak0-radio3">Erforderlich</label>
+            </div>
+
+            <div class="radio-group">
+                <legend>AK1</legend>
+                <input type="radio" id="ak1-radio0" name="ak1" value="0" checked/>
+                <label for="ak1-radio0">Don't care</label>
+                <input type="radio" id="ak1-radio1" name="ak1" value="1"/>
+                <label for="ak1-radio1">Gerne</label>
+                <input type="radio" id="ak1-radio2" name="ak1" value="2"/>
+                <label for="ak1-radio2">Unbedingt</label>
+                <input type="radio" id="ak1-radio3" name="ak1" value="3"/>
+                <label for="ak1-radio3">Erforderlich</label>
+            </div>
+        </div>
+
+        <!-- <h2>Three fields? Sure.</h2>
+        <div class="switch-field">
+            <input type="radio" id="radio-three" name="switch-two" value="yes" checked/>
+            <label for="radio-three">One</label>
+            <input type="radio" id="radio-four" name="switch-two" value="maybe" />
+            <label for="radio-four">Two</label>
+            <input type="radio" id="radio-five" name="switch-two" value="no" />
+            <label for="radio-five">Three</label>
+        </div> -->
+
+        <!-- <div class="radio-flex">
+            <div class="radio-group">
+              <label class="radio-label">
+                <input
+                  class="input-radio"
+                  type="radio"
+                  name="qusOne"
+                  id="qusOne"
+                />
+                Option one
+                <span class="radio-checkmark"></span>
+              </label>
+            </div>
+
+            <div class="radio-group">
+              <label class="radio-label">
+                <input
+                  class="input-radio"
+                  type="radio"
+                  name="qusOne"
+                  id="qusOne"
+                />
+                Option Two
+                <span class="radio-checkmark"></span>
+              </label>
+            </div>
+        </div> -->
+
+        <!-- <div class="flex flex-wrap mx-3">
+          <div class="w-full sm:w-half px-3">
+            <div class="mb-5 w-full">
+              <label for="date" class="form-label"> Date </label>
+              <input
+                type="date"
+                name="date"
+                id="date"
+                class="form-input"
+              />
+            </div>
+          </div>
+          <div class="w-full sm:w-half px-3">
+            <div class="mb-5">
+              <label for="time" class="form-label"> Time </label>
+              <input
+                type="time"
+                name="time"
+                id="time"
+                class="form-input"
+              />
+            </div>
+          </div>
+        </div> -->
+
+        <label class="form-label form-label-2">
+            Sonstiges
+        </label>
+        <div class="mb-5">
+          <label for="remarks" class="form-label"> Sonstige Anmerkungen (Frühere Abreise, ...) </label>
+          <input
+            type="text"
+            name="remarks"
+            id="remarks"
+            placeholder="Weitere Anmerkungen"
+            class="form-input"
+          />
+        </div>
+
+        <!-- <div class="mb-5 pt-3">
+          <label class="form-label form-label-2">
+            Address Details
+          </label>
+          <div class="flex flex-wrap mx-3">
+            <div class="w-full sm:w-half px-3">
+              <div class="mb-5">
+                <input
+                  type="text"
+                  name="area"
+                  id="area"
+                  placeholder="Enter area"
+                  class="form-input"
+                />
+              </div>
+            </div>
+            <div class="w-full sm:w-half px-3">
+              <div class="mb-5">
+                <input
+                  type="text"
+                  name="city"
+                  id="city"
+                  placeholder="Enter city"
+                  class="form-input"
+                />
+              </div>
+            </div>
+            <div class="w-full sm:w-half px-3">
+              <div class="mb-5">
+                <input
+                  type="text"
+                  name="state"
+                  id="state"
+                  placeholder="Enter state"
+                  class="form-input"
+                />
+              </div>
+            </div>
+            <div class="w-full sm:w-half px-3">
+              <div class="mb-5">
+                <input
+                  type="text"
+                  name="post-code"
+                  id="post-code"
+                  placeholder="Post Code"
+                  class="form-input"
+                />
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <div>
+          <button class="btn">Präferenzen abschicken</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
