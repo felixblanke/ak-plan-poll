@@ -106,7 +106,7 @@ body {
   box-shadow: none;
 }
 /* Erforderlich */
-.radio-group input[value="3"]:checked + label {
+.radio-group input[value="-1"]:checked + label {
   background-color: #ee6055;
   box-shadow: none;
 }
