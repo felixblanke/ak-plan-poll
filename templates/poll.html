@@ -1,99 +1,99 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-<div class="main-wrapper">
-    <div class="form-wrapper">
+{% extends "base.html" %}
+
+{% block title %}AK-Präferenzen {{ title }}{% endblock %}
+
+{% block header %}
+  <p class="form-heading mb-5">AK-Präferenzen {{ title }}</p>
+{% endblock %}
+
+{% block content %}
+<div class="form-wrapper">
+  <form action="{{ url_for('post_result', poll_name=poll_name) }}" method="POST">
+    <label class="form-label form-label-2">
+      Grunddaten (für etwaige Rückfragen)
+    </label>
     <div class="mb-5">
-        <p class="form-heading">AK-Präferenzen KoMa90</p>
+      <label for="name" class="form-label"> Dein Name </label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Name"
+        class="form-input"
+        required
+      />
     </div>
-      <form action="{{ url_for('post_result', poll_name=poll_name) }}" method="POST">
-        <label class="form-label form-label-2">
-            Grunddaten (für etwaige Rückfragen)
-        </label>
-        <div class="mb-5">
-          <label for="name" class="form-label"> Dein Name </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Name"
-            class="form-input"
-            required
-          />
-        </div>
-        <div class="mb-5">
-            <label for="uni" class="form-label"> Deine Hochschule </label>
-            <input
-              type="text"
-              name="uni"
-              id="uni"
-              placeholder="Hochschule"
-              class="form-input"
-              required
-            />
-        </div>
-        <div>
-          {% for block in block_list %}
-          <div>
-            <input type="checkbox" id="block{{ loop.index0 }}" name="block{{ loop.index0 }}" checked/>
-            <label for="block{{ loop.index0 }}"> {{ block }} </label>
-          </div>
-          {% endfor %}
-        </div>
-        <label class="form-label form-label-2">
-            AK Präferenzen
-        </label>
-
-        <div class="radio-flex">
-            {% for ak in ak_list %}
-            <div class="radio-group">
-                <legend>{{ ak["name"] }} <details>
-                  <summary>Beschreibung</summary>
-                  {{ ak["description"] }}
-                  {% if ak["head"] %}
-                  <br/><br/>
-                  Verantwortlich: {{ ak["head"] }}
-                  {% endif %}
-                  {% if ak["reso"] %}
-                  <br/><br/>
-                  <i>Eine Resoerstellung ist angedacht.</i>
-                  {% endif %}
-                </details></legend>
-                <input type="radio" id="ak{{ loop.index0 }}-radio0" name="ak{{ loop.index0 }}" value="0" required checked/>
-                <label for="ak{{ loop.index0 }}-radio0">Don't care</label>
-                <input type="radio" id="ak{{ loop.index0 }}-radio1" name="ak{{ loop.index0 }}" value="1" required/>
-                <label for="ak{{ loop.index0 }}-radio1">Gerne</label>
-                <input type="radio" id="ak{{ loop.index0 }}-radio2" name="ak{{ loop.index0 }}" value="2" required/>
-                <label for="ak{{ loop.index0 }}-radio2">Unbedingt</label>
-                <input type="radio" id="ak{{ loop.index0 }}-radio3" name="ak{{ loop.index0 }}" value="-1" required/>
-                <label for="ak{{ loop.index0 }}-radio3">Erforderlich</label>
-            </div>
-            {% endfor %}
-        </div>
-
-        <label class="form-label form-label-2">
-            Sonstiges
-        </label>
-        <div class="mb-5">
-          <label for="remarks" class="form-label"> Sonstige Anmerkungen (Frühere Abreise, ...) </label>
-          <input
-            type="text"
-            name="remarks"
-            id="remarks"
-            placeholder="Weitere Anmerkungen"
-            class="form-input"
-          />
-        </div>
-
-        <div>
-          <button class="btn">Präferenzen abschicken</button>
-        </div>
-      </form>
+    <div class="mb-5">
+      <label for="uni" class="form-label"> Deine Hochschule </label>
+      <input
+        type="text"
+        name="uni"
+        id="uni"
+        placeholder="Hochschule"
+        class="form-input"
+        required
+      />
     </div>
-  </div>
-</body>
-</html>
+    <!-- availability -->
+    <div>
+      {% for block in block_list %}
+      <div>
+        <input type="checkbox" id="block{{ loop.index0 }}" name="block{{ loop.index0 }}" checked/>
+        <label for="block{{ loop.index0 }}"> {{ block }} </label>
+      </div>
+      {% endfor %}
+    </div>
+    <!-- preferences -->
+    <label class="form-label form-label-2">
+      AK Präferenzen
+    </label>
+    <div class="radio-flex">
+      {% for ak in ak_list %}
+      <div class="radio-group">
+        <legend>
+          {{ ak["name"] }}
+          <details>
+            <summary>Beschreibung</summary>
+            {{ ak["description"] }}
+            {% if ak["head"] %}
+              <br/><br/>
+              Verantwortlich: {{ ak["head"] }}
+            {% endif %}
+            {% if ak["reso"] %}
+              <br/><br/>
+              <i>Eine Resoerstellung ist angedacht.</i>
+            {% endif %}
+          </details>
+        </legend>
+        <input type="radio" id="ak{{ loop.index0 }}-radio0" name="ak{{ loop.index0 }}" value="0" required checked/>
+        <label for="ak{{ loop.index0 }}-radio0">Don't care</label>
+        <input type="radio" id="ak{{ loop.index0 }}-radio1" name="ak{{ loop.index0 }}" value="1" required/>
+        <label for="ak{{ loop.index0 }}-radio1">Gerne</label>
+        <input type="radio" id="ak{{ loop.index0 }}-radio2" name="ak{{ loop.index0 }}" value="2" required/>
+        <label for="ak{{ loop.index0 }}-radio2">Unbedingt</label>
+        <input type="radio" id="ak{{ loop.index0 }}-radio3" name="ak{{ loop.index0 }}" value="-1" required/>
+        <label for="ak{{ loop.index0 }}-radio3">Erforderlich</label>
+      </div>
+      {% endfor %}
+    </div>
+    <!-- other -->
+    <label class="form-label form-label-2">
+        Sonstiges
+    </label>
+    <div class="mb-5">
+      <label for="remarks" class="form-label"> Sonstige Anmerkungen (Frühere Abreise, ...) </label>
+      <input
+        type="text"
+        name="remarks"
+        id="remarks"
+        placeholder="Weitere Anmerkungen"
+        class="form-input"
+      />
+    </div>
+    <!-- submit -->
+    <div>
+      <button class="btn">Präferenzen abschicken</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

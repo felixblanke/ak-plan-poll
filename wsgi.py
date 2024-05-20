@@ -90,6 +90,7 @@ def get_form(poll_name: str):
             poll_name=escape(poll_name),
             ak_list=ak_list,
             block_list=block_list,
+            title=escape(poll_name),
         )
     else:
         return render_template("unknown.html")
