@@ -15,11 +15,10 @@ def read_ak_list(poll_name: str) -> list[str] | None:
     if path.exists():
         with path.open("r") as ff:
             ak_data = json.load(ff)
-        return [
-            ak["info"] for ak in ak_data["aks"]
-        ]
+        return [ak["info"] for ak in ak_data["aks"]]
     else:
         return None
+
 
 @app.route("/<poll_name>", methods=["POST"])
 def post_result(poll_name: str):
@@ -66,6 +65,8 @@ def landing_page():
 @app.route("/<poll_name>", methods=["GET"])
 def get_form(poll_name: str):
     if (ak_list := read_ak_list(poll_name)) is not None:
-        return render_template("poll.html", poll_name=escape(poll_name), ak_list=ak_list)
+        return render_template(
+            "poll.html", poll_name=escape(poll_name), ak_list=ak_list
+        )
     else:
         return render_template("unknown.html")
