@@ -36,6 +36,14 @@
               required
             />
         </div>
+        <div>
+          {% for block in block_list %}
+          <div>
+            <input type="checkbox" id="block{{ loop.index0 }}" name="block{{ loop.index0 }}" checked/>
+            <label for="block{{ loop.index0 }}"> {{ block }} </label>
+          </div>
+          {% endfor %}
+        </div>
         <label class="form-label form-label-2">
             AK Präferenzen
         </label>

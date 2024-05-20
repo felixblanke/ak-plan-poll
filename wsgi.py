@@ -19,10 +19,20 @@ def read_ak_list(poll_name: str) -> list[str] | None:
     else:
         return None
 
+def read_block_list(poll_name: str) -> list[str] | None:
+    path = Path(safe_join("data", f"{poll_name}.json"))
+    if path.exists():
+        with path.open("r") as ff:
+            data = json.load(ff)
+        return data["timeslots"]["info"]["blocknames"];
+    else:
+        return None
+
 
 @app.route("/<poll_name>", methods=["POST"])
 def post_result(poll_name: str):
-    participant = {"preferences": []}
+    participant = {"preferences": [],"required_time_constraints": [f"notblock{i}" for i in range(7)]} 
+    # TODO: replace hardcoded num blocks by reasonable code
 
     participant["info"] = {
         "name": request.form["name"],
@@ -31,19 +41,21 @@ def post_result(poll_name: str):
     }
 
     for key, val in request.form.items():
-        if not key.startswith("ak"):
-            continue
+        if key.startswith("ak"):
 
-        preference_score = int(val)
+            preference_score = int(val)
 
-        participant["preferences"].append(
-            {
-                "ak_id": key,
-                "required": preference_score == -1,
-                "preference_score": preference_score,
-            }
-        )
-
+            participant["preferences"].append(
+                {
+                    "ak_id": key,
+                    "required": preference_score == -1,
+                    "preference_score": preference_score,
+                }
+            )
+        elif key.startswith("block"):
+            # here we only get the checked boxes, so we remove those from the set of all boxes set above
+            participant["required_time_constraints"].remove("not"+key)
+    
     export_dir = Path("export")
     export_dir.mkdir(exist_ok=True)
 
@@ -64,9 +76,9 @@ def landing_page():
 
 @app.route("/<poll_name>", methods=["GET"])
 def get_form(poll_name: str):
-    if (ak_list := read_ak_list(poll_name)) is not None:
+    if (ak_list := read_ak_list(poll_name)) is not None and (block_list := read_block_list(poll_name)) is not None:
         return render_template(
-            "poll.html", poll_name=escape(poll_name), ak_list=ak_list
+            "poll.html", poll_name=escape(poll_name), ak_list=ak_list, block_list=block_list
         )
     else:
         return render_template("unknown.html")
