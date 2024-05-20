@@ -10,7 +10,7 @@
     <div class="mb-5">
         <p class="form-heading">AK-Präferenzen KoMa90</p>
     </div>
-      <form action="https://koma-aks.fblanke.de/" method="POST">
+      <form action="{{ url_for('post_result', poll_name=poll_name) }}" method="POST">
         <label class="form-label form-label-2">
             Grunddaten
         </label>
