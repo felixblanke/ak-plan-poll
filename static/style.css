@@ -123,7 +123,7 @@ body {
     color: #07074d;
     display: block;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1.75vmin;
     flex-basis: 100%;
 }
 .radio-group {
@@ -140,7 +140,7 @@ body {
 }
 .btn {
   text-align: center;
-  font-size: 16px;
+  font-size: 2.2vmin;
   border-radius: 6px;
   padding: 14px 32px;
   border: none;
