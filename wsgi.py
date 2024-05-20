@@ -12,4 +12,4 @@ def post_result(poll_name: str):
 
 @app.route("/<poll_name>", methods=["GET"])
 def get_form(poll_name: str):
-    return render_template("poll.html")
+    return render_template("poll.html", poll_name=poll_name)
