@@ -15,7 +15,7 @@ def read_ak_list(poll_name: str) -> list[str] | None:
         with path.open("r") as ff:
             ak_data = json.load(ff)
         return [
-            ak["info"]["name"] for ak in ak_data["aks"]
+            ak["info"] for ak in ak_data["aks"]
         ]
     else:
         return None

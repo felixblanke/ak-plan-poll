@@ -126,6 +126,11 @@ body {
     font-size: 1.75vmin;
     flex-basis: 100%;
 }
+.radio-group legend details{
+  font-weight: 400;
+  font-size: 1.6vmin;
+  flex-basis: 100%;
+}
 .radio-group {
     margin-bottom: 20px;
     display: flex;

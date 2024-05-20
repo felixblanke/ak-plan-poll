@@ -41,9 +41,9 @@
         </label>
 
         <div class="radio-flex">
-            {% for ak_name in ak_list %}
+            {% for ak in ak_list %}
             <div class="radio-group">
-                <legend>{{ ak_name }}</legend>
+                <legend>{{ ak["name"] }} <details><summary>Beschreibung</summary> {{ ak["description"] }}</details></legend>
                 <input type="radio" id="ak{{ loop.index0 }}-radio0" name="ak{{ loop.index0 }}" value="0" required checked/>
                 <label for="ak{{ loop.index0 }}-radio0">Don't care</label>
                 <input type="radio" id="ak{{ loop.index0 }}-radio1" name="ak{{ loop.index0 }}" value="1" required/>
