@@ -1,0 +1,20 @@
+{
+    "aks": [
+        {
+            "info": {
+                "name": "AK Berufungshandbuch",
+                "description": "Nach 12 Jahren erscheint es sinnvoll, dass Berufungshandbuch zu aktualisieren. Ziel wird es sein, die Fragen und Rechtslagen zu aktualisieren. ",
+                "head": "Max",
+                "reso": false
+            }
+        },
+        {
+            "info": {
+                "name": "AK Kostenloser ÖPNV",
+                "description": "Reso-AK, um kostenlosen ÖPNV für Studierende zu fordern.",
+                "head": "N/A",
+                "reso": true
+            }
+        }
+    ]
+}

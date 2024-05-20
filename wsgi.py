@@ -1,12 +1,24 @@
 import json
+from pathlib import Path
 
 from flask import Flask, render_template, url_for, request
+from werkzeug.security import safe_join
+from markupsafe import escape
 
 app = Flask(__name__)
 # app.config.from_file("config.json", load=json.load)
 
-with open("aks.json", "r") as ff:
-    ak_dict = json.load(ff)
+
+def read_ak_list(poll_name: str) -> list[str] | None:
+    path = Path(safe_join("data", f"{poll_name}.json"))
+    if path.exists():
+        with path.open("r") as ff:
+            ak_data = json.load(ff)
+        return [
+            ak["info"]["name"] for ak in ak_data["aks"]
+        ]
+    else:
+        return None
 
 @app.route("/<poll_name>", methods=["POST"])
 def post_result(poll_name: str):
@@ -44,7 +56,7 @@ def landing_page():
 
 @app.route("/<poll_name>", methods=["GET"])
 def get_form(poll_name: str):
-    if (ak_list := ak_dict.get(poll_name, None)) is not None:
-        return render_template("poll.html", poll_name=poll_name, ak_list=ak_list)
+    if (ak_list := read_ak_list(poll_name)) is not None:
+        return render_template("poll.html", poll_name=escape(poll_name), ak_list=ak_list)
     else:
         return render_template("unknown.html")
