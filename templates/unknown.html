@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-<div class="main-wrapper">
-    <h3>Es ist ein Fehler aufgetreten!</h3>
+{% extends "base.html" %}
+
+{% block title %}Fehler – AK-Präferenzen{% endblock %}
+
+{% block header %}
+  <p class="form-label form-label-2">Es ist ein Fehler aufgetreten!</p>
+{% endblock %}
+
+{% block content %}
+<div class="form-wrapper">
     <p>
-        Unter dieser URL werden derzeit keine AK-Präferenzen abgefragt!<br/>
-        Schau bitte nach, ob du dich bei der URL kein Typo unterlaufen ist, und wende dich im Zweifelsfall an die Orga.
+        Unter dieser URL werden derzeit keine AK-Präferenzen abgefragt.<br/>
+        Schau bitte nach, dass dir bei der URL kein Typo unterlaufen ist, und wende dich im Zweifelsfall an die Orga.
     </p>
 </div>
-</body>
-</html>
+{% endblock %}
