@@ -4,6 +4,7 @@ from pathlib import Path
 from flask import Flask, render_template, url_for, request
 from werkzeug.security import safe_join
 from markupsafe import escape
+import uuid
 
 app = Flask(__name__)
 # app.config.from_file("config.json", load=json.load)
@@ -43,6 +44,14 @@ def post_result(poll_name: str):
                 "preference_score": preference_score,
             }
         )
+
+    export_dir = Path("export")
+    export_dir.mkdir(exist_ok=True)
+
+    ak_uuid = uuid.uuid4()
+    with (export_dir / f"{ak_uuid}.json").open("w") as ff:
+        json.dump(participant, ff, indent=4, ensure_ascii=False)
+
     return render_template(
         "success.html",
         participant=json.dumps(participant, indent=4, ensure_ascii=False),
