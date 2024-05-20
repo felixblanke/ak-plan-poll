@@ -13,9 +13,31 @@ def dummy_get_aks(poll_name: str) -> list[str]:
 
 @app.route("/<poll_name>", methods=["POST"])
 def post_result(poll_name: str):
-    # TODO: Process request
-    print(request.form)
-    return render_template("success.html")
+    participant = {"preferences": []}
+
+    participant["info"] = {
+        "name": request.form["name"],
+        "uni": request.form["uni"],
+        "remarks": request.form["remarks"],
+    }
+
+    for key, val in request.form.items():
+        if not key.startswith("ak"):
+            continue
+
+        preference_score = int(val)
+
+        participant["preferences"].append(
+            {
+                "ak_id": key,
+                "required": preference_score == -1,
+                "preference_score": preference_score,
+            }
+        )
+    return render_template(
+        "success.html",
+        participant=json.dumps(participant, indent=4, ensure_ascii=False),
+    )
 
 
 @app.route("/", methods=["GET"])
