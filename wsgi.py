@@ -61,7 +61,7 @@ def post_result(poll_name: str):
     export_dir = Path(app.config["EXPORT_DIR"] + "_" + poll_name)
     export_dir.mkdir(exist_ok=True)
 
-    ak_uuid = uuid.uuid4()
+    ak_uuid = uuid.uuid1()
     with (export_dir / f"{ak_uuid}.json").open("w") as ff:
         json.dump(participant, ff, indent=4, ensure_ascii=False)
 
