@@ -56,7 +56,7 @@ def post_result(poll_name: str):
             # here we only get the checked boxes, so we remove those from the set of all boxes set above
             participant["required_time_constraints"].remove("not"+key)
     
-    export_dir = Path("export")
+    export_dir = Path("export_"+poll_name)
     export_dir.mkdir(exist_ok=True)
 
     ak_uuid = uuid.uuid4()
