@@ -21,19 +21,23 @@ def read_ak_list(poll_name: str) -> list[str] | None:
     else:
         return None
 
+
 def read_block_list(poll_name: str) -> list[str] | None:
     path = Path(safe_join("data", f"{poll_name}.json"))
     if path.exists():
         with path.open("r") as ff:
             data = json.load(ff)
-        return data["timeslots"]["info"]["blocknames"];
+        return data["timeslots"]["info"]["blocknames"]
     else:
         return None
 
 
 @app.route("/<poll_name>", methods=["POST"])
 def post_result(poll_name: str):
-    participant = {"preferences": [],"required_time_constraints": [f"notblock{i}" for i in range(7)]} 
+    participant = {
+        "preferences": [],
+        "required_time_constraints": [f"notblock{i}" for i in range(7)],
+    }
     # TODO: replace hardcoded num blocks by reasonable code
 
     participant["info"] = {
@@ -56,7 +60,7 @@ def post_result(poll_name: str):
             )
         elif key.startswith("block"):
             # here we only get the checked boxes, so we remove those from the set of all boxes set above
-            participant["required_time_constraints"].remove("not"+key)
+            participant["required_time_constraints"].remove("not" + key)
 
     export_dir = Path(app.config["EXPORT_DIR"] + "_" + poll_name)
     export_dir.mkdir(exist_ok=True)
@@ -78,9 +82,14 @@ def landing_page():
 
 @app.route("/<poll_name>", methods=["GET"])
 def get_form(poll_name: str):
-    if (ak_list := read_ak_list(poll_name)) is not None and (block_list := read_block_list(poll_name)) is not None:
+    if (ak_list := read_ak_list(poll_name)) is not None and (
+        block_list := read_block_list(poll_name)
+    ) is not None:
         return render_template(
-            "poll.html", poll_name=escape(poll_name), ak_list=ak_list, block_list=block_list
+            "poll.html",
+            poll_name=escape(poll_name),
+            ak_list=ak_list,
+            block_list=block_list,
         )
     else:
         return render_template("unknown.html")
