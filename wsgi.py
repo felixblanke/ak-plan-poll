@@ -7,11 +7,13 @@ from markupsafe import escape
 import uuid
 
 app = Flask(__name__)
-# app.config.from_file("config.json", load=json.load)
+app.config["DATA_DIR"] = "data"
+app.config["EXPORT_DIR"] = "export"
+app.config.from_file("config.json", load=json.load, silent=True)
 
 
 def read_ak_list(poll_name: str) -> list[str] | None:
-    path = Path(safe_join("data", f"{poll_name}.json"))
+    path = Path(safe_join(app.config["DATA_DIR"], f"{poll_name}.json"))
     if path.exists():
         with path.open("r") as ff:
             ak_data = json.load(ff)
@@ -55,8 +57,8 @@ def post_result(poll_name: str):
         elif key.startswith("block"):
             # here we only get the checked boxes, so we remove those from the set of all boxes set above
             participant["required_time_constraints"].remove("not"+key)
-    
-    export_dir = Path("export_"+poll_name)
+
+    export_dir = Path(app.config["EXPORT_DIR"] + "_" + poll_name)
     export_dir.mkdir(exist_ok=True)
 
     ak_uuid = uuid.uuid4()
