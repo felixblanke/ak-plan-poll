@@ -7,7 +7,7 @@ app.config.from_file("config.json", load=json.load)
 
 def dumm_get_aks(poll_name: str) -> list[str]:
     ak_dict = {
-        "koma90": ["AK Berufungshandbuch", "AK Testwurst"]
+        "koma90-test": ["AK Berufungshandbuch", "AK Testwurst"]
     }
     return ak_dict.get(poll_name, None)
 
