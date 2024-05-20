@@ -41,29 +41,19 @@
         </label>
 
         <div class="radio-flex">
+            {% for ak_name in ak_list %}
             <div class="radio-group">
-                <legend>AK0</legend>
-                <input type="radio" id="ak0-radio0" name="ak0" value="0" required checked/>
-                <label for="ak0-radio0">Don't care</label>
-                <input type="radio" id="ak0-radio1" name="ak0" value="1" required/>
-                <label for="ak0-radio1">Gerne</label>
-                <input type="radio" id="ak0-radio2" name="ak0" value="2" required/>
-                <label for="ak0-radio2">Unbedingt</label>
-                <input type="radio" id="ak0-radio3" name="ak0" value="3" required/>
-                <label for="ak0-radio3">Erforderlich</label>
+                <legend>{{ ak_name }}</legend>
+                <input type="radio" id="ak{{ loop.index0 }}-radio0" name="ak{{ loop.index0 }}" value="0" required checked/>
+                <label for="ak{{ loop.index0 }}-radio0">Don't care</label>
+                <input type="radio" id="ak{{ loop.index0 }}-radio1" name="ak{{ loop.index0 }}" value="1" required/>
+                <label for="ak{{ loop.index0 }}-radio1">Gerne</label>
+                <input type="radio" id="ak{{ loop.index0 }}-radio2" name="ak{{ loop.index0 }}" value="2" required/>
+                <label for="ak{{ loop.index0 }}-radio2">Unbedingt</label>
+                <input type="radio" id="ak{{ loop.index0 }}-radio3" name="ak{{ loop.index0 }}" value="3" required/>
+                <label for="ak{{ loop.index0 }}-radio3">Erforderlich</label>
             </div>
-
-            <div class="radio-group">
-                <legend>AK1</legend>
-                <input type="radio" id="ak1-radio0" name="ak1" value="0" required checked/>
-                <label for="ak1-radio0">Don't care</label>
-                <input type="radio" id="ak1-radio1" name="ak1" value="1" required/>
-                <label for="ak1-radio1">Gerne</label>
-                <input type="radio" id="ak1-radio2" name="ak1" value="2" required/>
-                <label for="ak1-radio2">Unbedingt</label>
-                <input type="radio" id="ak1-radio3" name="ak1" value="3" required/>
-                <label for="ak1-radio3">Erforderlich</label>
-            </div>
+            {% endfor %}
         </div>
 
         <label class="form-label form-label-2">
