@@ -46,6 +46,10 @@
                 <legend>{{ ak["name"] }} <details>
                   <summary>Beschreibung</summary>
                   {{ ak["description"] }}
+                  {% if ak["head"] %}
+                  <br/><br/>
+                  Verantwortlich: {{ ak["head"] }}
+                  {% endif %}
                   {% if ak["reso"] %}
                   <br/><br/>
                   <i>Eine Resoerstellung ist angedacht.</i>
