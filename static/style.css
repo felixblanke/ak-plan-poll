@@ -8,10 +8,10 @@ body {
   font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
 }
 p {
-  font-size: 1.6vmin;
+  font-size: 14px;
 }
 li {
-  font-size: 1.6vmin;
+  font-size: 14px;
 }
 
 .mb-3 {
@@ -33,7 +33,7 @@ li {
 .form-heading {
   color: #07074d;
   font-weight: 1000;
-  font-size: 3vmin;
+  font-size: 24px;
 }
 .form-wrapper {
   margin: 0 auto;
@@ -44,13 +44,13 @@ li {
 .form-label {
   display: block;
   font-weight: 500;
-  font-size: 1.75vmin;
+  font-size: 16px;
   color: #07074d;
   margin-bottom: 12px;
 }
 .form-label-2 {
   font-weight: 600;
-  font-size: 2.2vmin;
+  font-size: 20px;
   margin-bottom: 20px;
 }
 .form-input {
@@ -60,7 +60,7 @@ li {
   border: 1px solid #e0e0e0;
   background: white;
   font-weight: 500;
-  font-size: 1.75vmin;
+  font-size: 16px;
   color: #6b7280;
   outline: none;
   resize: none;
@@ -96,7 +96,7 @@ li {
 .radio-group label {
   background-color: #e4e4e4;
   color: rgba(0, 0, 0, 0.6);
-  font-size: 1.6vmin;
+  font-size: 14px;
   line-height: 1;
   text-align: center;
   padding: 8px 16px;
@@ -148,17 +148,17 @@ li {
     color: #07074d;
     display: block;
     font-weight: 500;
-    font-size: 1.75vmin;
+    font-size: 16px;
     flex-basis: 100%;
 }
 .radio-group legend details{
   font-weight: 400;
-  font-size: 1.6vmin;
+  font-size: 14px;
   flex-basis: 100%;
 }
 .btn {
   text-align: center;
-  font-size: 2.2vmin;
+  font-size: 20px;
   border-radius: 6px;
   padding: 14px 32px;
   border: none;
