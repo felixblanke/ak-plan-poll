@@ -34,17 +34,46 @@
       />
     </div>
     <!-- availability -->
-    <label class="form-label form-label-2">
-      Anwesenheit auf KoMa
-    </label>
-    <div class="radio-flex mb-5">
+    <label class="form-label form-label-2">Verfügbarkeit</label>
+    <p class="mb-3">
+      Bitte gib an, ob du zu einem, der Zeitpunkte <i>gar nicht</i> kannst.
+    </p>
+    <ul style="margin-left: 20px;" class="mb-3">
+      <li>Vormittag: Zeit vor dem Mittagessen</li>
+      <li>Nachmittag: Zeit nach dem Mittagessen</li>
+      <li>Abend: Zeit vor dem Abendessen (ca. 17-19Uhr, nur Do)</li>
+    </ul>
+    <label for="do" class="form-label"> Donnerstag </label>
+    <div class="radio-group">
+      <input type="checkbox" id="block0" name="block0" checked/>
+      <label for="block0"> Vormittag </label>
+      <input type="checkbox" id="block1" name="block1" checked/>
+      <label for="block1"> Nachmittag </label>
+      <input type="checkbox" id="block2" name="block2" checked/>
+      <label for="block2"> Abend </label>
+    </div>
+    <label for="fr" class="form-label"> Freitag </label>
+    <div class="radio-group">
+      <input type="checkbox" id="block3" name="block3" checked/>
+      <label for="block3"> Vormittag </label>
+      <input type="checkbox" id="block4" name="block4" checked/>
+      <label for="block4"> Nachmittag </label>
+    </div>
+    <label for="sa" class="form-label"> Samstag </label>
+    <div class="radio-group">
+      <input type="checkbox" id="block5" name="block5" checked/>
+      <label for="block5"> Vormittag </label>
+      <input type="checkbox" id="block6" name="block6" checked/>
+      <label for="block6"> Nachmittag </label>
+    </div>
+<!--
+    <div class="radio-group">
       {% for block in block_list %}
-      <div>
         <input type="checkbox" id="block{{ loop.index0 }}" name="block{{ loop.index0 }}" checked/>
         <label for="block{{ loop.index0 }}"> {{ block }} </label>
-      </div>
       {% endfor %}
     </div>
+-->
     <!-- preferences -->
     <label class="form-label form-label-2">
       AK Präferenzen
