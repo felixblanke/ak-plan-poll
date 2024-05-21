@@ -1,4 +1,5 @@
 from collections import defaultdict
+from itertools import chain
 import json
 from pathlib import Path
 
@@ -124,9 +125,12 @@ def show_results(poll_name: str):
     if (data := read_ak_data(poll_name)) is not None:
         title = read_info(data, key="title", default=poll_name)
         ak_list = read_ak_list(data, default=[])
-        # print(ak_list)
+        block_dict = read_blocks(data, default={})
         ak_pref_dict = defaultdict(lambda: defaultdict(int))
         time_constraint_dict = defaultdict(lambda: defaultdict(int))
+        block_lst = []
+        for day, day_entries in block_dict.items():
+            block_lst.extend([f"{day[:2]} {slot_name}" for block_idx, slot_name in day_entries])
         for result_json in export_dir.glob("*.json"):
             with result_json.open("r") as ff:
                 result_dict = json.load(ff)
@@ -137,7 +141,8 @@ def show_results(poll_name: str):
                 if pref["preference_score"] == 0:
                     continue
                 for time_constr in result_dict["required_time_constraints"]:
-                    time_constraint_dict[ak_name][time_constr] += 1
+                    time_contr_idx = int(time_constr[len("notblock"):])
+                    time_constraint_dict[ak_name][block_lst[time_contr_idx]] += 1
 
         ak_pref_dict = {k: dict(v) for k, v in ak_pref_dict.items()}
         for k in ak_pref_dict:
