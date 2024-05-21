@@ -35,7 +35,10 @@
       />
     </div>
     <!-- availability -->
-    <div>
+    <label class="form-label form-label-2">
+      Anwesenheit auf KoMa
+    </label>
+    <div class="radio-flex mb-5">
       {% for block in block_list %}
       <div>
         <input type="checkbox" id="block{{ loop.index0 }}" name="block{{ loop.index0 }}" checked/>
@@ -68,9 +71,9 @@
         <input type="radio" id="ak{{ loop.index0 }}-radio0" name="ak{{ loop.index0 }}" value="0" required checked/>
         <label for="ak{{ loop.index0 }}-radio0">Don't care</label>
         <input type="radio" id="ak{{ loop.index0 }}-radio1" name="ak{{ loop.index0 }}" value="1" required/>
-        <label for="ak{{ loop.index0 }}-radio1">Gerne</label>
+        <label for="ak{{ loop.index0 }}-radio1">Interessiert</label>
         <input type="radio" id="ak{{ loop.index0 }}-radio2" name="ak{{ loop.index0 }}" value="2" required/>
-        <label for="ak{{ loop.index0 }}-radio2">Unbedingt</label>
+        <label for="ak{{ loop.index0 }}-radio2">Sehr gerne</label>
         <input type="radio" id="ak{{ loop.index0 }}-radio3" name="ak{{ loop.index0 }}" value="-1" required/>
         <label for="ak{{ loop.index0 }}-radio3">Erforderlich</label>
       </div>
