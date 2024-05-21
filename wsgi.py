@@ -130,7 +130,9 @@ def show_results(poll_name: str):
         time_constraint_dict = defaultdict(lambda: defaultdict(int))
         block_lst = []
         for day, day_entries in block_dict.items():
-            block_lst.extend([f"{day[:2]} {slot_name}" for block_idx, slot_name in day_entries])
+            block_lst.extend(
+                [f"{day[:2]} {slot_name}" for block_idx, slot_name in day_entries]
+            )
         for result_json in export_dir.glob("*.json"):
             with result_json.open("r") as ff:
                 result_dict = json.load(ff)
@@ -141,7 +143,7 @@ def show_results(poll_name: str):
                 if pref["preference_score"] == 0:
                     continue
                 for time_constr in result_dict["required_time_constraints"]:
-                    time_contr_idx = int(time_constr[len("notblock"):])
+                    time_contr_idx = int(time_constr[len("notblock") :])
                     time_constraint_dict[ak_name][block_lst[time_contr_idx]] += 1
 
         ak_pref_dict = {k: dict(v) for k, v in ak_pref_dict.items()}
