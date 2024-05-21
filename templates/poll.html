@@ -39,11 +39,7 @@
     <p class="mb-3">
       Bitte gib an, ob du zu einem, der Zeitpunkte <i>gar nicht</i> kannst.
     </p>
-    <ul style="margin-left: 20px;" class="mb-3">
-      <li>Vormittag: Zeit vor dem Mittagessen</li>
-      <li>Nachmittag: Zeit nach dem Mittagessen</li>
-      <li>Abend: Zeit vor dem Abendessen (ca. 17-19Uhr, nur Do)</li>
-    </ul>
+    {% if block_info_html %}{{ block_info_html | safe }}{% endif %}
     <label for="do" class="form-label"> Donnerstag </label>
     <div class="radio-group">
       <input type="checkbox" id="block0" name="block0" checked/>
@@ -78,9 +74,8 @@
 -->
     <!-- preferences -->
     {% if ak_list %}
-    <label class="form-label form-label-2">
-      AK Präferenzen
-    </label>
+    <label class="form-label form-label-2">AK Präferenzen</label>
+    {% if ak_info_html %}{{ ak_info_html | safe }}{% endif %}
     <div class="radio-flex">
       {% for ak in ak_list %}
       <div class="radio-group">

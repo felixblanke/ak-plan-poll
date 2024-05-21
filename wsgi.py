@@ -35,9 +35,9 @@ def read_block_list(data: dict, default: list[str] | None = None) -> list[str] |
         return default
 
 
-def read_title(data: dict, default: str | None = None) -> str | None:
+def read_info(data: dict, key: str, default: str | None = None) -> str | None:
     try:
-        return data["info"]["title"]
+        return data["info"][key]
     except:
         return default
 
@@ -93,7 +93,9 @@ def get_form(poll_name: str):
     if (data := read_ak_data(poll_name)) is not None:
         ak_list = read_ak_list(data, default=[])
         block_list = read_block_list(data, default=[])
-        title = read_title(data, default="poll_name")
+        title = read_info(data, key="title", default=poll_name)
+        block_info_html = read_info(data, key="block_info_html")
+        ak_info_html = read_info(data, key="ak_info_html")
 
         return render_template(
             "poll.html",
@@ -101,6 +103,8 @@ def get_form(poll_name: str):
             ak_list=ak_list,
             block_list=block_list,
             title=escape(title),
+            block_info_html=block_info_html, # Do not escape!
+            ak_info_html=ak_info_html, # Do not escape!
         )
     else:
         return render_template("unknown.html")
