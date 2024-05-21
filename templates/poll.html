@@ -34,6 +34,7 @@
       />
     </div>
     <!-- availability -->
+    {% if block_list %}
     <label class="form-label form-label-2">Verfügbarkeit</label>
     <p class="mb-3">
       Bitte gib an, ob du zu einem, der Zeitpunkte <i>gar nicht</i> kannst.
@@ -66,6 +67,7 @@
       <input type="checkbox" id="block6" name="block6" checked/>
       <label for="block6"> Nachmittag </label>
     </div>
+    {% endif %}
 <!--
     <div class="radio-group">
       {% for block in block_list %}
@@ -75,6 +77,7 @@
     </div>
 -->
     <!-- preferences -->
+    {% if ak_list %}
     <label class="form-label form-label-2">
       AK Präferenzen
     </label>
@@ -107,6 +110,7 @@
       </div>
       {% endfor %}
     </div>
+    {% endif %}
     <!-- other -->
     <label class="form-label form-label-2">
         Sonstiges

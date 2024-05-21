@@ -90,8 +90,8 @@ def landing_page():
 @app.route("/<poll_name>", methods=["GET"])
 def get_form(poll_name: str):
     if (data := read_ak_data(poll_name)) is not None:
-        ak_list = read_ak_list(data)
-        block_list = read_block_list(data)
+        ak_list = read_ak_list(data, default=[])
+        block_list = read_block_list(data, default=[])
         title = read_title(data, default="poll_name")
 
         return render_template(
