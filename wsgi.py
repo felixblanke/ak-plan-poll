@@ -11,6 +11,7 @@ app.config["DATA_DIR"] = "data"
 app.config["EXPORT_DIR"] = "export"
 app.config.from_file("config.json", load=json.load, silent=True)
 
+
 def read_ak_data(poll_name: str) -> dict | None:
     path = Path(safe_join(app.config["DATA_DIR"], f"{poll_name}.json"))
     try:
@@ -22,7 +23,7 @@ def read_ak_data(poll_name: str) -> dict | None:
 
 def read_ak_list(data: dict, default: list[str] | None = None) -> list[str] | None:
     try:
-        return [ak["info"] for ak in ak_data["aks"]]
+        return [ak["info"] for ak in data["aks"]]
     except KeyError:
         return default
 
@@ -33,11 +34,13 @@ def read_block_list(data: dict, default: list[str] | None = None) -> list[str] |
     except:
         return default
 
+
 def read_title(data: dict, default: str | None = None) -> str | None:
     try:
         return data["info"]["title"]
     except:
         return default
+
 
 @app.route("/<poll_name>", methods=["POST"])
 def post_result(poll_name: str):
@@ -55,9 +58,7 @@ def post_result(poll_name: str):
 
     for key, val in request.form.items():
         if key.startswith("ak"):
-
             preference_score = int(val)
-
             participant["preferences"].append(
                 {
                     "ak_id": key,
