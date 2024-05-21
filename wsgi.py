@@ -1,3 +1,4 @@
+from collections import defaultdict
 import json
 from pathlib import Path
 
@@ -28,9 +29,13 @@ def read_ak_list(data: dict, default: list[str] | None = None) -> list[str] | No
         return default
 
 
-def read_block_list(data: dict, default: list[str] | None = None) -> list[str] | None:
+def read_blocks(data: dict, default: dict | None = None) -> dict[str, list[tuple[int, str]]] | None:
     try:
-        return data["timeslots"]["info"]["blocknames"]
+        blocknames = data["timeslots"]["info"]["blocknames"]
+        block_dir = defaultdict(list)
+        for slot_idx, (day, block_name) in enumerate(blocknames):
+            block_dir[day].append((slot_idx, block_name))
+        return block_dir
     except:
         return default
 
@@ -92,7 +97,7 @@ def landing_page():
 def get_form(poll_name: str):
     if (data := read_ak_data(poll_name)) is not None:
         ak_list = read_ak_list(data, default=[])
-        block_list = read_block_list(data, default=[])
+        block_dict = read_blocks(data, default={})
         title = read_info(data, key="title", default=poll_name)
         block_info_html = read_info(data, key="block_info_html")
         ak_info_html = read_info(data, key="ak_info_html")
@@ -100,8 +105,8 @@ def get_form(poll_name: str):
         return render_template(
             "poll.html",
             poll_name=escape(poll_name),
-            ak_list=ak_list,
-            block_list=block_list,
+            aks=ak_list,
+            blocks=block_dict.items(),
             title=escape(title),
             block_info_html=block_info_html, # Do not escape!
             ak_info_html=ak_info_html, # Do not escape!

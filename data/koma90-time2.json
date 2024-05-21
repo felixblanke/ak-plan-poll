@@ -78,13 +78,13 @@
     "info": {
       "duration": "50 min",
       "blocknames": [
-        "Do Vormittag",
-        "Do Nachmittag",
-        "Do Abend",
-        "Fr Vormittag",
-        "Fr Nachmittag",
-        "Sa Vormittag",
-        "Sa Nachmittag"
+        ["Donnerstag", "Vormittag"],
+        ["Donnerstag", "Nachmittag"],
+        ["Donnerstag", "Abend"],
+        ["Freitag", "Vormittag"],
+        ["Freitag", "Nachmittag"],
+        ["Samstag", "Vormittag"],
+        ["Samstag", "Nachmittag"]
       ]
     },
     "blocks": [
