@@ -11,24 +11,26 @@ app.config["DATA_DIR"] = "data"
 app.config["EXPORT_DIR"] = "export"
 app.config.from_file("config.json", load=json.load, silent=True)
 
-
-def read_ak_list(poll_name: str) -> list[str] | None:
+def read_ak_data(poll_name: str) -> dict | None:
     path = Path(safe_join(app.config["DATA_DIR"], f"{poll_name}.json"))
     if path.exists():
         with path.open("r") as ff:
-            ak_data = json.load(ff)
-        return [ak["info"] for ak in ak_data["aks"]]
+            return json.load(ff)
     else:
         return None
 
 
-def read_block_list(poll_name: str) -> list[str] | None:
-    path = Path(safe_join("data", f"{poll_name}.json"))
-    if path.exists():
-        with path.open("r") as ff:
-            data = json.load(ff)
+def read_ak_list(data: dict) -> list[str] | None:
+    try:
+        return [ak["info"] for ak in ak_data["aks"]]
+    except KeyError:
+        return None
+
+
+def read_block_list(data: dict) -> list[str] | None:
+    try:
         return data["timeslots"]["info"]["blocknames"]
-    else:
+    except:
         return None
 
 
@@ -82,9 +84,10 @@ def landing_page():
 
 @app.route("/<poll_name>", methods=["GET"])
 def get_form(poll_name: str):
-    if (ak_list := read_ak_list(poll_name)) is not None and (
-        block_list := read_block_list(poll_name)
-    ) is not None:
+    if (data := read_ak_data(poll_name)) is not None:
+        ak_list = read_ak_list(data)
+        block_list = read_block_list(data)
+
         return render_template(
             "poll.html",
             poll_name=escape(poll_name),
