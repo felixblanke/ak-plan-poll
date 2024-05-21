@@ -20,18 +20,18 @@ def read_ak_data(poll_name: str) -> dict | None:
         return None
 
 
-def read_ak_list(data: dict) -> list[str] | None:
+def read_ak_list(data: dict, default: list[str] | None = None) -> list[str] | None:
     try:
         return [ak["info"] for ak in ak_data["aks"]]
     except KeyError:
-        return None
+        return default
 
 
-def read_block_list(data: dict) -> list[str] | None:
+def read_block_list(data: dict, default: list[str] | None = None) -> list[str] | None:
     try:
         return data["timeslots"]["info"]["blocknames"]
     except:
-        return None
+        return default
 
 def read_title(data: dict, default: str | None = None) -> str | None:
     try:
