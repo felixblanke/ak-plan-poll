@@ -13,10 +13,10 @@ app.config.from_file("config.json", load=json.load, silent=True)
 
 def read_ak_data(poll_name: str) -> dict | None:
     path = Path(safe_join(app.config["DATA_DIR"], f"{poll_name}.json"))
-    if path.exists():
+    try:
         with path.open("r") as ff:
             return json.load(ff)
-    else:
+    except:
         return None
 
 
