@@ -55,3 +55,5 @@ To create your configuration, you can follow this minimal example:
 ### Export
 
 The response of each participant will be stored at `EXPORT_DIR/<poll_name>/<uuid>.json` where `<uuid>` is a generated UUID1.
+
+An ad hoc evaluation of all responses so far can be accessed at `your-conference.example.com/result/<poll_name>`.
