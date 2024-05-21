@@ -7,14 +7,19 @@
 {% endblock %}
 
 {% block content %}
-<div class="form-wrapper">
+
+<p class="form-label">Anzahl Abstimmungen: {{ aks.__len__() }}</p>
+
+<div class="form-wrapper flex flex-wrap">
 {% for ak in aks %}
+<div class="w-full sm:w-half">
 <h4 class="form-label">{{ ak[0] }}</h4>
 <ul class="mb-5" style="align-self: flex-start;margin-left: 20px;">
     <li>Interessiert: {{ ak[1].get(1, 0) }}</li>
     <li>Sehr gerne: {{ ak[1].get(2, 0) }}</li>
     <li>Erforderlich: {{ ak[1].get(-1, 0) }}</li>
 </ul>
+</div>
 {% endfor %}
 </div>
 
