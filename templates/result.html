@@ -8,7 +8,7 @@
 
 {% block content %}
 
-<p class="form-label">Anzahl Abstimmungen: {{ aks.__len__() }}</p>
+<p class="form-label">Anzahl Abstimmungen: {{ num_participants }}</p>
 
 <div class="form-wrapper flex flex-wrap">
 {% for ak in aks %}
@@ -18,6 +18,7 @@
     <li>Interessiert: {{ ak[1].get(1, 0) }}</li>
     <li>Sehr gerne: {{ ak[1].get(2, 0) }}</li>
     <li>Erforderlich: {{ ak[1].get(-1, 0) }}</li>
+    <li>Time-constraints: {{ ak[1].get('time_constraints') }}</li>
 </ul>
 </div>
 {% endfor %}

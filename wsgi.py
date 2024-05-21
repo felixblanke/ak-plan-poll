@@ -124,16 +124,22 @@ def show_results(poll_name: str):
         ak_list = read_ak_list(data, default=[])
         # print(ak_list)
         ak_pref_dict = defaultdict(lambda: defaultdict(int))
+        time_constraint_dict = defaultdict(lambda: defaultdict(int))
         for result_json in export_dir.glob("*.json"):
             with result_json.open("r") as ff:
                 result_dict = json.load(ff)
             for pref in result_dict["preferences"]:
                 ak_id = int(pref["ak_id"][2:])
-                print(ak_list[ak_id]["name"])
-                ak_pref_dict[ak_list[ak_id]["name"]][pref["preference_score"]] += 1
+                ak_name = ak_list[ak_id]["name"]
+                ak_pref_dict[ak_name][pref["preference_score"]] += 1
+                if pref["preference_score"] == 0:
+                    continue
+                for time_constr in result_dict["required_time_constraints"]:
+                    time_constraint_dict[ak_name][time_constr] += 1
 
         ak_pref_dict = {k: dict(v) for k, v in ak_pref_dict.items()}
-
-        return render_template("result.html", title=escape(title), aks=ak_pref_dict.items(), result_str=json.dumps(ak_pref_dict, indent=4, ensure_ascii=False))
+        for k in ak_pref_dict:
+            ak_pref_dict[k]["time_constraints"] = dict(time_constraint_dict[k])
+        return render_template("result.html", title=escape(title), aks=ak_pref_dict.items(), num_participants=len(list(export_dir.glob("*.json"))))
     else:
         return render_template("unknown.html")
