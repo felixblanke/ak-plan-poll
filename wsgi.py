@@ -29,7 +29,9 @@ def read_ak_list(data: dict, default: list[str] | None = None) -> list[str] | No
         return default
 
 
-def read_blocks(data: dict, default: dict | None = None) -> dict[str, list[tuple[int, str]]] | None:
+def read_blocks(
+    data: dict, default: dict | None = None
+) -> dict[str, list[tuple[int, str]]] | None:
     try:
         blocknames = data["timeslots"]["info"]["blocknames"]
         block_dir = defaultdict(list)
@@ -108,8 +110,8 @@ def get_form(poll_name: str):
             aks=ak_list,
             blocks=block_dict.items(),
             title=escape(title),
-            block_info_html=block_info_html, # Do not escape!
-            ak_info_html=ak_info_html, # Do not escape!
+            block_info_html=block_info_html,  # Do not escape!
+            ak_info_html=ak_info_html,  # Do not escape!
         )
     else:
         return render_template("unknown.html")
@@ -140,6 +142,11 @@ def show_results(poll_name: str):
         ak_pref_dict = {k: dict(v) for k, v in ak_pref_dict.items()}
         for k in ak_pref_dict:
             ak_pref_dict[k]["time_constraints"] = dict(time_constraint_dict[k])
-        return render_template("result.html", title=escape(title), aks=ak_pref_dict.items(), num_participants=len(list(export_dir.glob("*.json"))))
+        return render_template(
+            "result.html",
+            title=escape(title),
+            aks=ak_pref_dict.items(),
+            num_participants=len(list(export_dir.glob("*.json"))),
+        )
     else:
         return render_template("unknown.html")
