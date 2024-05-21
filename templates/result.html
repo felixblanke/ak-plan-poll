@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}AK-Präferenzen {{ title }} – Zwischenauswertung{% endblock %}
+
+{% block header %}
+  <p class="form-label form-label-2">Zwischenauswertung – AK-Präferenzen {{ title }}</p>
+{% endblock %}
+
+{% block content %}
+<div class="form-wrapper">
+{% for ak in aks %}
+<h4 class="form-label">{{ ak[0] }}</h4>
+<ul class="mb-5" style="align-self: flex-start;margin-left: 20px;">
+    <li>Interessiert: {{ ak[1].get(1, 0) }}</li>
+    <li>Sehr gerne: {{ ak[1].get(2, 0) }}</li>
+    <li>Erforderlich: {{ ak[1].get(-1, 0) }}</li>
+</ul>
+{% endfor %}
+</div>
+
+{% endblock %}

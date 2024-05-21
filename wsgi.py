@@ -113,3 +113,27 @@ def get_form(poll_name: str):
         )
     else:
         return render_template("unknown.html")
+
+
+@app.route("/result/<poll_name>", methods=["GET"])
+def show_results(poll_name: str):
+    export_dir = Path(app.config["EXPORT_DIR"]) / poll_name
+
+    if (data := read_ak_data(poll_name)) is not None:
+        title = read_info(data, key="title", default=poll_name)
+        ak_list = read_ak_list(data, default=[])
+        # print(ak_list)
+        ak_pref_dict = defaultdict(lambda: defaultdict(int))
+        for result_json in export_dir.glob("*.json"):
+            with result_json.open("r") as ff:
+                result_dict = json.load(ff)
+            for pref in result_dict["preferences"]:
+                ak_id = int(pref["ak_id"][2:])
+                print(ak_list[ak_id]["name"])
+                ak_pref_dict[ak_list[ak_id]["name"]][pref["preference_score"]] += 1
+
+        ak_pref_dict = {k: dict(v) for k, v in ak_pref_dict.items()}
+
+        return render_template("result.html", title=escape(title), aks=ak_pref_dict.items(), result_str=json.dumps(ak_pref_dict, indent=4, ensure_ascii=False))
+    else:
+        return render_template("unknown.html")
