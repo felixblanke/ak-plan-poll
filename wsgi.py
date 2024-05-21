@@ -33,6 +33,11 @@ def read_block_list(data: dict) -> list[str] | None:
     except:
         return None
 
+def read_title(data: dict, default: str | None = None) -> str | None:
+    try:
+        return data["info"]["title"]
+    except:
+        return default
 
 @app.route("/<poll_name>", methods=["POST"])
 def post_result(poll_name: str):
@@ -87,13 +92,14 @@ def get_form(poll_name: str):
     if (data := read_ak_data(poll_name)) is not None:
         ak_list = read_ak_list(data)
         block_list = read_block_list(data)
+        title = read_title(data, default="poll_name")
 
         return render_template(
             "poll.html",
             poll_name=escape(poll_name),
             ak_list=ak_list,
             block_list=block_list,
-            title=escape(poll_name),
+            title=escape(title),
         )
     else:
         return render_template("unknown.html")
