@@ -2,6 +2,14 @@
   "aks": [
     {
       "info": {
+        "name": "AK Abschlussarbeitenbörse",
+        "description": "Unser Studiendekanat und einige Vorstände unserer Institute (Universität Göttingen) hatten die Idee eine Art Abschlussarbeitenbörse zu etablieren. \nWir als Fachschaft wollten unabhängig davon ein sehr ähnliches Konzept einführen und sind gerade in der Organisation einer ersten Veranstaltung. Wir würden uns daher sehr über Erfahrungen anderer mit, oder über Diskussionen zur bestmöglichen Durchführung solcher Veranstaltungen freuen.",
+        "head": "Alex (Uni Göttingen)",
+        "reso": false
+      }
+    },
+    {
+      "info": {
         "name": "AK Ausbleibender Abiturjahrgang NRW 2026",
         "description": "Da die meisten Gymnasien und Gesamtschulen in Nordrhein-Westfalen zum G9-Modell zurückgekehrt sind, wird es 2026 deutlich weniger Abiturienten in NRW geben. Somit ist an den Universitäten in NRW auch mit einer deutlich geringeren Zahl an Studienanfängern im Wintersemester 2026/27 zu rechnen.\nWir würden uns gerne darüber austauschen, was diese \"Abi-Lücke\" für Auswirkungen auf die Fachschaftsarbeit haben kann, um sich in den kommenden zwei Jahren bestmöglich auf diese Situation einstellen zu können.",
         "head": "",
@@ -58,6 +66,22 @@
     },
     {
       "info": {
+        "name": "AK Gossip Girls",
+        "description": "An quasi allen Unis dieses Landes gibt es Zeug das *besonders* vonstattengeht. Wir kotzen uns gegenseitig aus (nicht an die Wände) und lachen über all das, was schief läuft",
+        "head": "Johannes (Uni Passau)",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK How to Plena",
+        "description": "",
+        "head": "Frauke",
+        "reso": false
+      }
+    },
+    {
+      "info": {
         "name": "AK IT-Infrastruktur",
         "description": "Austausch ueber und gegebenfalls produktive Arbeit an IT-Infrastruktur (primaer der KoMa selbst, aber wir koennen auch gerne ueber FSR-Infrastruktur reden).",
         "head": "[[Benutzer:Mmarx|mmarx]] (TU Dresden)",
@@ -98,6 +122,14 @@
     },
     {
       "info": {
+        "name": "AK Kurier",
+        "description": "",
+        "head": "Uschi",
+        "reso": false
+      }
+    },
+    {
+      "info": {
         "name": "AK Lehramt",
         "description": "Austausch über den Studiengang Lehramt mit anderen Unis. Ansprechen von Problemen und vielleicht auch eine Lösung dazu finden.",
         "head": "",
@@ -122,10 +154,26 @@
     },
     {
       "info": {
+        "name": "AK Nachhaltigkeit",
+        "description": "Nachhaltigkeit und Klimaneutralität sind für Universitäten wichtige Zielen,\nseit Deutschland sich im Pariser Klimaabkommen zu Einspaarungen verpflichtet hat.\nIn diesem AK sollen Erfahrungen und Informationen  über aktive Prozesse an Universitäten,\nmögliche weitere Prozesse und die Rolle die Mathematikfachschaften dabei spielen können, ausgetauscht werden.",
+        "head": "David Neumann",
+        "reso": false
+      }
+    },
+    {
+      "info": {
         "name": "AK Vorlesungsskripte",
         "description": "Reso-AK zur Ausarbeitung einer Resolution zur Bereitstellung von Vorlesungsskripten.",
         "head": "",
         "reso": true
+      }
+    },
+    {
+      "info": {
+        "name": "AK Social Media",
+        "description": "Input und ggf. Output zu Social-Media-Praesenz der KoMa",
+        "head": "Uschi",
+        "reso": false
       }
     },
     {
@@ -154,10 +202,34 @@
     },
     {
       "info": {
+        "name": "AK Tutorienfinanzierung",
+        "description": "Austausch über Schwierigkeiten bei der Tutorienfinanzierung an den verschiedenen Unis: Wie ist der Stand? Welche Maßnahmen werden ergriffen? Was wären gute Maßnahmen?\nEventuell könnte das auch in einer Reso enden.",
+        "head": "",
+        "reso": true
+      }
+    },
+    {
+      "info": {
         "name": "AK Vergütung für Berufungskommissionen",
         "description": "Nachdem wir uns auf der 89.KoMa über Vergütung für Fachschaftsarbeit Ausgetauscht haben, kamen wir zu dem Ergebnis dass eine Vergütung für Arbeit in Gremien, bei denen die Uni studentische Vertreter fordert, insbesondere Berufungskommissionen erwünscht wäre.\nIn diesem AK wollen wir uns nochmal darüber Austauschen und eventuell eine Reso dazu verfassen.",
         "head": "",
         "reso": true
+      }
+    },
+    {
+      "info": {
+        "name": "AK dezentrale Uni meets Mobilität",
+        "description": "Dezentrale Unis bzw. ¬Campus-Unis stellen Studis oft vor die schwierige Aufgabe, innerhalb der kurzen Vorlesungspausen den Standort wechseln müssen. Insbesondere für Lehramtsstudis kann das ziemlich starke Umstände bedeuten. \nIn Erlangen/Nürnberg ist aktuell zB eine Stadt-Umland-Bahn in Planung, die die Abstände zwischen den zwei Städten überwindbar machen soll. Meinungen sind hier teils noch vermischt, deshalb würden wir uns gerne über andere Situationen informieren, um damit argumentieren zu können.",
+        "head": "",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK theoretischer Antifascismus",
+        "description": "Wir wollen überlegen, wie man sich als Studierendenschaft/Fachschaft geben den anhaltenden Rechtsruck vorgehen und positionieren kann.",
+        "head": "Louis (Bonn)",
+        "reso": false
       }
     }
   ]
