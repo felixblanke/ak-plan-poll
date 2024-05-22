@@ -9,7 +9,7 @@ from markupsafe import escape
 import uuid
 
 app = Flask(__name__)
-app.config["DATA_DIR"] = "data"
+app.config["DATA_DIR"] = "data-enabled"
 app.config["EXPORT_DIR"] = "export"
 app.config.from_file("config.json", load=json.load, silent=True)
 
@@ -93,7 +93,7 @@ def post_result(poll_name: str):
 
 @app.route("/", methods=["GET"])
 def landing_page():
-    return render_template("unknown.html")
+    return redirect(url_for("koma90-time2"), code=307)
 
 
 @app.route("/<poll_name>", methods=["GET"])
