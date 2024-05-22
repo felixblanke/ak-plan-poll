@@ -23,6 +23,15 @@ def read_ak_data(poll_name: str) -> dict | None:
         return None
 
 
+def write_ak_data(poll_name: str, data: dict) -> dict | None:
+    path = Path(safe_join(app.config["DATA_DIR"], f"{poll_name}.json"))
+    try:
+        with path.open("w") as ff:
+            return json.dump(data, ff, indent=2, ensure_ascii=False)
+    except:
+        return None
+
+
 def read_ak_list(data: dict, default: list[str] | None = None) -> list[str] | None:
     try:
         return [ak["info"] for ak in data["aks"]]
@@ -124,9 +133,38 @@ def create_poll(poll_name: str):
         data = {"aks": []}
 
     if request.method == "POST":
-        # TODO change data
-        # TODO store data
-        ...
+        form_data = dict(request.form)
+
+        ak_dict = defaultdict(lambda: defaultdict(dict))
+
+        for key, val in form_data.items():
+            if key.split("_")[0] == "akneu":
+                continue
+            ak_id = int(key.split("_")[0][2:])
+            field = key.split("_")[1]
+            ak_dict[ak_id]["info"][field] = val
+
+        data["aks"] = list(map(lambda x: x[1], sorted(ak_dict.items(), key=lambda x: x[0])))
+
+        new_ak_id = max(ak_dict.keys()) + 1
+        new_ak_dict = {}
+        if form_data["akneu_name"]:
+            new_ak_dict["name"] = form_data["akneu_name"]
+            new_ak_dict["description"] = form_data["akneu_description"]
+            new_ak_dict["head"] = form_data["akneu_head"]
+            if "akneu_reso" in form_data.keys():
+                new_ak_dict["reso"] = True
+
+        for v in ak_dict.values():
+            if "reso" not in v["info"]:
+                v["info"]["reso"] = False
+
+        if new_ak_dict:
+            data["aks"].append({"info": new_ak_dict})
+
+        write_ak_data(poll_name, data)
+
+        return redirect(url_for("create_poll", poll_name=poll_name))
 
     title = read_info(data, key="title", default=poll_name)
     ak_list = read_ak_list(data, default=[])
@@ -135,6 +173,7 @@ def create_poll(poll_name: str):
         "create.html",
         title=title,
         aks=ak_list,
+        poll_name=poll_name,
     )
 
 

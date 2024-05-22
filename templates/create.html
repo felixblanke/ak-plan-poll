@@ -13,116 +13,86 @@
     {% for ak in aks %}
     <div class="mb-5">
         <label class="form-label form-label-2">{{ ak["name"] }}</label>
+        <label class="form-label">AK Name</label>
         <input
           type="text"
-          name="name"
-          id="name"
-          placeholder="Name"
+          name="ak{{ loop.index0 }}_name"
+          id="ak{{ loop.index0 }}_name"
+          placeholder="AK Name"
           class="form-input"
+          value="{{ ak['name'] }}"
           required
         />
         
-        <label for="name" class="form-label"> Dein Name </label>
+        <label class="form-label">AK Beschreibung</label>
         <input
           type="text"
-          name="name"
-          id="name"
-          placeholder="Name"
+          name="ak{{ loop.index0 }}_description"
+          id="ak{{ loop.index0 }}_description"
+          placeholder="AK Beschreibung"
           class="form-input"
-          required
+          value="{{ ak['description'] }}"
         />
-      </div>
 
+        <label class="form-label">AK Head</label>
+        <input
+          type="text"
+          name="ak{{ loop.index0 }}_head"
+          id="ak{{ loop.index0 }}_head"
+          placeholder="AK Head"
+          class="form-input"
+          value="{{ ak['head'] }}"
+        />
+
+        <label class="form-label">Resoable</label>
+        <input
+            type="checkbox"
+            id="ak{{ loop.index0 }}_reso"
+            name="ak{{ loop.index0 }}_reso"
+            {{ "checked" if ak["reso"] else "" }}
+        />
+    </div>
     {% endfor %}
-    
-    <label class="form-label form-label-2">Grunddaten (für etwaige Rückfragen)</label>
     <div class="mb-5">
-      <label for="name" class="form-label"> Dein Name </label>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        placeholder="Name"
-        class="form-input"
-        required
-      />
+        <label class="form-label form-label-2">NEUER AK</label>
+        <label class="form-label">AK Name</label>
+        <input
+          type="text"
+          name="akneu_name"
+          id="akneu_name"
+          placeholder="AK Name"
+          class="form-input"
+          value=""
+        />
+        
+        <label class="form-label">AK Beschreibung</label>
+        <input
+          type="text"
+          name="akneu_description"
+          id="akneu_description"
+          placeholder="AK Beschreibung"
+          class="form-input"
+          value=""
+        />
+
+        <label class="form-label">AK Head</label>
+        <input
+          type="text"
+          name="akneu_head"
+          id="akneu_head"
+          placeholder="AK Head"
+          class="form-input"
+          value=""
+        />
+
+        <label class="form-label">Resoable</label>
+        <input
+            type="checkbox"
+            id="akneu_reso"
+            name="akneu_reso"
+        />
     </div>
-    <div class="mb-5">
-      <label for="uni" class="form-label"> Deine Hochschule </label>
-      <input
-        type="text"
-        name="uni"
-        id="uni"
-        placeholder="Hochschule"
-        class="form-input"
-        required
-      />
-    </div>
-    <!-- availability -->
-    {% if blocks %}
-    <label class="form-label form-label-2">Verfügbarkeit</label>
-    <p class="mb-3">
-      Bitte gib an, ob du zu einem der Zeitpunkte <i>gar nicht</i> kannst.
-    </p>
-    {% if block_info_html %}{{ block_info_html | safe }}{% endif %}
-    {% for day in blocks %}
-      <label for="day{{ loop.index0 }}" class="form-label"> {{ day[0] }} </label>
-      <div class="radio-group">
-        {% for block in day[1] %}
-        <input type="checkbox" id="block{{ block[0] }}" name="block{{ block[0] }}" checked/>
-        <label for="block{{ block[0] }}"> {{ block[1] }} </label>
-        {% endfor %}
-      </div>
-    {% endfor %}
-    {% endif %}
-    <!-- preferences -->
-    {% if aks %}
-    <label class="form-label form-label-2">AK Präferenzen</label>
-    {% if ak_info_html %}{{ ak_info_html | safe }}{% endif %}
-    <div class="radio-flex">
-      {% for ak in aks %}
-      <div class="radio-group">
-        <legend>
-          {{ ak["name"] }}
-          <details>
-            <summary>Beschreibung</summary>
-            {{ ak["description"] }}
-            {% if ak["head"] %}
-              <br/><br/>
-              Verantwortlich: {{ ak["head"] }}
-            {% endif %}
-            {% if ak["reso"] %}
-              <br/><br/>
-              <i>Eine Resoerstellung ist angedacht.</i>
-            {% endif %}
-          </details>
-        </legend>
-        <input type="radio" id="ak{{ loop.index0 }}-radio0" name="ak{{ loop.index0 }}" value="0" required checked/>
-        <label for="ak{{ loop.index0 }}-radio0">Egal</label>
-        <input type="radio" id="ak{{ loop.index0 }}-radio1" name="ak{{ loop.index0 }}" value="1" required/>
-        <label for="ak{{ loop.index0 }}-radio1">Interessiert</label>
-        <input type="radio" id="ak{{ loop.index0 }}-radio2" name="ak{{ loop.index0 }}" value="2" required/>
-        <label for="ak{{ loop.index0 }}-radio2">Sehr gerne</label>
-        <input type="radio" id="ak{{ loop.index0 }}-radio3" name="ak{{ loop.index0 }}" value="-1" required/>
-        <label for="ak{{ loop.index0 }}-radio3">Erforderlich</label>
-      </div>
-      {% endfor %}
-    </div>
-    {% endif %}
-    <!-- other -->
-    <label class="form-label form-label-2">
-        Sonstiges
-    </label>
-    <div class="mb-5">
-      <label for="remarks" class="form-label"> Sonstige Anmerkungen (Frühere Abreise, ...) </label>
-      <input
-        type="text"
-        name="remarks"
-        id="remarks"
-        placeholder="Weitere Anmerkungen"
-        class="form-input"
-      />
-    </div>
+
     <!-- submit -->
     <div>
       <button class="btn">Präferenzen abschicken</button>
