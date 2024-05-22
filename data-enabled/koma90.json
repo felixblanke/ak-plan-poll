@@ -798,7 +798,10 @@
     {
       "info": {
         "name": "AK Reso polieren",
-        "duration": 3,
+        "head": "N/A",
+        "description": "N/A",
+        "reso": false,
+        "duration": 3
       },
       "time_constraints": ["block6"]
     }
