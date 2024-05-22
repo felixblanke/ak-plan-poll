@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="form-wrapper">
+<div class="form-wrapper" style="max-width: 95vw;">
   <form action="{{ url_for('create_poll', poll_name=poll_name) }}" method="POST">
     <!-- base data -->
     {% for ak in aks %}
