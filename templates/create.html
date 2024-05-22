@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} – AKs anlegen{% endblock %}
+
+{% block header %}
+  <p class="form-heading mb-5">{{ title }} – AKs anlegen</p>
+{% endblock %}
+
+{% block content %}
+<div class="form-wrapper">
+  <form action="{{ url_for('create_poll', poll_name=poll_name) }}" method="POST">
+    <!-- base data -->
+    {% for ak in aks %}
+    <div class="mb-5">
+        <label class="form-label form-label-2">{{ ak["name"] }}</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Name"
+          class="form-input"
+          required
+        />
+        
+        <label for="name" class="form-label"> Dein Name </label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Name"
+          class="form-input"
+          required
+        />
+      </div>
+
+    {% endfor %}
+    
+    <label class="form-label form-label-2">Grunddaten (für etwaige Rückfragen)</label>
+    <div class="mb-5">
+      <label for="name" class="form-label"> Dein Name </label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Name"
+        class="form-input"
+        required
+      />
+    </div>
+    <div class="mb-5">
+      <label for="uni" class="form-label"> Deine Hochschule </label>
+      <input
+        type="text"
+        name="uni"
+        id="uni"
+        placeholder="Hochschule"
+        class="form-input"
+        required
+      />
+    </div>
+    <!-- availability -->
+    {% if blocks %}
+    <label class="form-label form-label-2">Verfügbarkeit</label>
+    <p class="mb-3">
+      Bitte gib an, ob du zu einem der Zeitpunkte <i>gar nicht</i> kannst.
+    </p>
+    {% if block_info_html %}{{ block_info_html | safe }}{% endif %}
+    {% for day in blocks %}
+      <label for="day{{ loop.index0 }}" class="form-label"> {{ day[0] }} </label>
+      <div class="radio-group">
+        {% for block in day[1] %}
+        <input type="checkbox" id="block{{ block[0] }}" name="block{{ block[0] }}" checked/>
+        <label for="block{{ block[0] }}"> {{ block[1] }} </label>
+        {% endfor %}
+      </div>
+    {% endfor %}
+    {% endif %}
+    <!-- preferences -->
+    {% if aks %}
+    <label class="form-label form-label-2">AK Präferenzen</label>
+    {% if ak_info_html %}{{ ak_info_html | safe }}{% endif %}
+    <div class="radio-flex">
+      {% for ak in aks %}
+      <div class="radio-group">
+        <legend>
+          {{ ak["name"] }}
+          <details>
+            <summary>Beschreibung</summary>
+            {{ ak["description"] }}
+            {% if ak["head"] %}
+              <br/><br/>
+              Verantwortlich: {{ ak["head"] }}
+            {% endif %}
+            {% if ak["reso"] %}
+              <br/><br/>
+              <i>Eine Resoerstellung ist angedacht.</i>
+            {% endif %}
+          </details>
+        </legend>
+        <input type="radio" id="ak{{ loop.index0 }}-radio0" name="ak{{ loop.index0 }}" value="0" required checked/>
+        <label for="ak{{ loop.index0 }}-radio0">Egal</label>
+        <input type="radio" id="ak{{ loop.index0 }}-radio1" name="ak{{ loop.index0 }}" value="1" required/>
+        <label for="ak{{ loop.index0 }}-radio1">Interessiert</label>
+        <input type="radio" id="ak{{ loop.index0 }}-radio2" name="ak{{ loop.index0 }}" value="2" required/>
+        <label for="ak{{ loop.index0 }}-radio2">Sehr gerne</label>
+        <input type="radio" id="ak{{ loop.index0 }}-radio3" name="ak{{ loop.index0 }}" value="-1" required/>
+        <label for="ak{{ loop.index0 }}-radio3">Erforderlich</label>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <!-- other -->
+    <label class="form-label form-label-2">
+        Sonstiges
+    </label>
+    <div class="mb-5">
+      <label for="remarks" class="form-label"> Sonstige Anmerkungen (Frühere Abreise, ...) </label>
+      <input
+        type="text"
+        name="remarks"
+        id="remarks"
+        placeholder="Weitere Anmerkungen"
+        class="form-input"
+      />
+    </div>
+    <!-- submit -->
+    <div>
+      <button class="btn">Präferenzen abschicken</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

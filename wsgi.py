@@ -3,7 +3,7 @@ from itertools import chain
 import json
 from pathlib import Path
 
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request, redirect
 from werkzeug.security import safe_join
 from markupsafe import escape
 import uuid
@@ -116,6 +116,26 @@ def get_form(poll_name: str):
         )
     else:
         return render_template("unknown.html")
+
+@app.route("/create/<poll_name>", methods=["GET", "POST"])
+def create_poll(poll_name: str):
+    data = read_ak_data(poll_name)
+    if data is None:
+        data = {"aks": []}
+
+    if request.method == "POST":
+        # TODO change data
+        # TODO store data
+        ...
+
+    title = read_info(data, key="title", default=poll_name)
+    ak_list = read_ak_list(data, default=[])
+
+    return render_template(
+        "create.html",
+        title=title,
+        aks=ak_list,
+    )
 
 
 @app.route("/result/<poll_name>", methods=["GET"])
