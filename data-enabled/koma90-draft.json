@@ -424,6 +424,36 @@
   },
   "aks": [
     {
+      "required_room_constraints": [
+        "mvroom",
+        "seminarroom"
+      ],
+      "required_time_constraints": [
+        "mvtime"
+      ],
+      "duration": 2,
+      "info": {
+        "name": "KoMa e.V. Mitgliederversammlung",
+        "description": "23.5. 15h SR0.003",
+        "head": "Hannes (Essen)",
+        "reso": false
+      }
+    },
+    {
+      "required_room_constraints": [
+        "bbgrroom"
+      ],
+      "required_time_constraints": [
+        "bbgrtime"
+      ],
+      "info": {
+        "name": "AK praktischer Antifascismus",
+        "description": "11 Kaiserplatz",
+        "head": "Louis (Bonn)",
+        "reso": false
+      }
+    },
+    {
       "info": {
         "name": "AK Abschlussarbeitenbörse",
         "description": "Unser Studiendekanat und einige Vorstände unserer Institute (Universität Göttingen) hatten die Idee eine Art Abschlussarbeitenbörse zu etablieren. Wir als Fachschaft wollten unabhängig davon ein sehr ähnliches Konzept einführen und sind gerade in der Organisation einer ersten Veranstaltung. Wir würden uns daher sehr über Erfahrungen anderer mit, oder über Diskussionen zur bestmöglichen Durchführung solcher Veranstaltungen freuen.",
@@ -663,15 +693,6 @@
         "description": "Wir wollen überlegen, wie man sich als Studierendenschaft/Fachschaft geben den anhaltenden Rechtsruck vorgehen und positionieren kann.",
         "head": "Louis (Bonn)",
         "duration": "1",
-        "reso": false
-      }
-    },
-    {
-      "info": {
-        "name": "AK praktischer Antifaschismus",
-        "description": "wir gehen AfD nerven",
-        "head": "Louis (Bonn)",
-        "duration": "",
         "reso": false
       }
     },
