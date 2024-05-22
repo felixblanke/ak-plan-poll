@@ -1,0 +1,164 @@
+{
+  "aks": [
+    {
+      "info": {
+        "name": "AK Ausbleibender Abiturjahrgang NRW 2026",
+        "description": "Da die meisten Gymnasien und Gesamtschulen in Nordrhein-Westfalen zum G9-Modell zurückgekehrt sind, wird es 2026 deutlich weniger Abiturienten in NRW geben. Somit ist an den Universitäten in NRW auch mit einer deutlich geringeren Zahl an Studienanfängern im Wintersemester 2026/27 zu rechnen.\nWir würden uns gerne darüber austauschen, was diese \"Abi-Lücke\" für Auswirkungen auf die Fachschaftsarbeit haben kann, um sich in den kommenden zwei Jahren bestmöglich auf diese Situation einstellen zu können.",
+        "head": "",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK Awareness",
+        "description": "Austausch über Awareness-Arbeit im Rahmen von FSR Veranstaltungen.\nWie ist es möglich Grundstrukturen der Awareness auch auf kleinen Veranstaltungen mit wenig Helfenden zu gewährleisten?",
+        "head": "",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK Berufungshandbuch",
+        "description": "Nach 12 Jahren erscheint es sinnvoll, dass Berufungshandbuch zu aktualisieren. Ziel wird es sein, die Fragen und Rechtslagen zu aktualisieren.",
+        "head": "[[Benutzer:Mmarx|mmarx]] (TU Dresden)",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK Englischsprachiger Master",
+        "description": "Auf der letzten KoMa gab es einen AK zu englischsprachigen Studiengängen. Viel quantitatives ist dabei leider nicht herumgekommen. Da weiterhin Universitäten mit englischsprachigen Master-Studiengängen versuchen, ausländische Studierende anzuwerben, würden wir uns über einen Austausch mit Zahlen, Daten und sonstigen Erfahrungen freuen, wenn das gewünscht ist (und jemand was anzubieten hat).",
+        "head": "",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK Eventaustausch",
+        "description": "Wir haben schon öfter Events organisiert, aber durchaus noch Bedarf an neuen Ideen und Input dazu wie bei euch Events gemacht werden. \nKommt vorbei und erzählt was eure FS für Events veranstaltet und v.a. wie genau ihr einzelne Dinge löst. \nHier soll es um Details gehen!",
+        "head": "Sven und Sina (Uni Passau)",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK Frauenquote",
+        "description": "Hieraus soll eine Resolution werden, wie wir uns zu Frauenquoten in der Lehre und Gremien positionieren. Außerdem soll für bereits bestehende Quoten präzisiert werden, wie wir uns deren Umsetzung wünschen würden, insbesondere auch im Hinblick auf die Rechte von Trans*-Personen, die (Nicht-)Existenz von Geschlechtsregistern etc. (siehe auch AK Geschlechtergleichstellung KoMa89).",
+        "head": "",
+        "reso": true
+      }
+    },
+    {
+      "info": {
+        "name": "AK Gendern und geschlechtergerechte Sprache an Hochschulen",
+        "description": "Aus dem AK Geschlechtergleichstellung der letzten KoMa hervorgegangen, wollen wir eine Resolution erarbeiten, in welcher wir uns zur Verwendung geschlechtergerechter Sprache an Hochschulen positionieren. Außerdem soll ein Fachschaftsleitfaden zu sinnvollem (Ent-)Gendern in der Fachschaftsarbeit entstehen. Eventuell muss das beides in 2 AKs gesplittet werden.",
+        "head": "",
+        "reso": true
+      }
+    },
+    {
+      "info": {
+        "name": "AK IT-Infrastruktur",
+        "description": "Austausch ueber und gegebenfalls produktive Arbeit an IT-Infrastruktur (primaer der KoMa selbst, aber wir koennen auch gerne ueber FSR-Infrastruktur reden).",
+        "head": "[[Benutzer:Mmarx|mmarx]] (TU Dresden)",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK Interdisziplinarität",
+        "description": "Vernetzung zu und Planung von Seminaren in Zusammenarbeit oder thematischer Überschneidung mit Studiengängen außerhalb des MINT-Bereichs.",
+        "head": "Felix (LUH)",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK KIF-KoMa",
+        "description": "Die KoMa 92 in Passau findet zusammen mit der KIF 53,0 statt. Lasst uns darüber reden, wie wir das so cool wie möglich hinkriegen.\n\nDie Orga erzählt, welche Gemeinsamkeiten und Unterschiede sie schon erkannt haben, und wie der aktueller Plan aussieht.\nDann Diskutieren wir darüber, was wir noch besser machen können, was die KoMa von der KIF lernen kann und umgekehrt, und was bei der Planung vielleicht noch übersehen wurde.",
+        "head": "Sven (Uni Passau)",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK Kennenlernspiele",
+        "description": "Austausch über Kennenlernspiele für Ersti Arbeit.",
+        "head": "",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK Kostenloser ÖPNV",
+        "description": "Reso-AK, um kostenlosen ÖPNV für Studierende zu fordern.",
+        "head": "",
+        "reso": true
+      }
+    },
+    {
+      "info": {
+        "name": "AK Lehramt",
+        "description": "Austausch über den Studiengang Lehramt mit anderen Unis. Ansprechen von Problemen und vielleicht auch eine Lösung dazu finden.",
+        "head": "",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK Lehre Verbessern",
+        "description": "Aktuelle Probleme mit Umstellung Diplom -> Bachelor, zu hohe Durchfallquoten, \"Matheraum\" gibt's bald nicht mehr u. Ä.",
+        "head": "Dustin + ?",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK MeTaFa-Reso(s)",
+        "description": "Austausch über die Reso(s) der MeTaFa und diskutieren ob man diese annehmen mag.",
+        "head": "",
+        "reso": true
+      }
+    },
+    {
+      "info": {
+        "name": "AK Vorlesungsskripte",
+        "description": "Reso-AK zur Ausarbeitung einer Resolution zur Bereitstellung von Vorlesungsskripten.",
+        "head": "",
+        "reso": true
+      }
+    },
+    {
+      "info": {
+        "name": "AK Sponsoring",
+        "description": "Austausch über verschiedene Ansätze, Sponsoring durchzuführen und Sponsoren anzuwerben",
+        "head": "",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK Sprecher*innencafé",
+        "description": "Austausch zwischen Sprecher*innen und Vorständen von Fachschaften. Wie geht ihr mit mangelder Motivation, schwierigen Situationen etc. um?\nGerne reden wir auch über alles, das uns irgendwie einfällt. (Eigentlich ist dieser AK eine Selbsthilfegruppe)",
+        "head": "Johannes (Uni Passau)",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK Studiengangsentwicklung",
+        "description": "- Vorstellung des Studentischen Akkreditierungspool \n\n- Einführung Qualität in Studium und Lehre \n\n- \"Akkreditierung\" und warum man es nicht essen sollte",
+        "head": "Moritz",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK Vergütung für Berufungskommissionen",
+        "description": "Nachdem wir uns auf der 89.KoMa über Vergütung für Fachschaftsarbeit Ausgetauscht haben, kamen wir zu dem Ergebnis dass eine Vergütung für Arbeit in Gremien, bei denen die Uni studentische Vertreter fordert, insbesondere Berufungskommissionen erwünscht wäre.\nIn diesem AK wollen wir uns nochmal darüber Austauschen und eventuell eine Reso dazu verfassen.",
+        "head": "",
+        "reso": true
+      }
+    }
+  ]
+}
