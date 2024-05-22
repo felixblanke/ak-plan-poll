@@ -146,7 +146,7 @@ def create_poll(poll_name: str):
 
         data["aks"] = list(map(lambda x: x[1], sorted(ak_dict.items(), key=lambda x: x[0])))
 
-        new_ak_id = max(ak_dict.keys()) + 1
+        new_ak_id = max(ak_dict.keys()) + 1 if ak_dict else 0
         new_ak_dict = {}
         if form_data["akneu_name"]:
             new_ak_dict["name"] = form_data["akneu_name"]
