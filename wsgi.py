@@ -102,7 +102,7 @@ def post_result(poll_name: str):
 
 @app.route("/", methods=["GET"])
 def landing_page():
-    return redirect(url_for("koma90-time2"), code=307)
+    return render_template("unknown.html")
 
 
 @app.route("/<poll_name>", methods=["GET"])
