@@ -2,76 +2,76 @@
   "rooms": [
     {
       "id": "0.003",
-      "info": "",
+      "info": {"name": "0.003"},
       "capacity": 17,
       "fulfilled_room_constraints": [
         "seminarroom",
         "mvroom"
       ],
-      "required_time_constraints": []
+      "time_constraints": []
     },
     {
       "id": "0.006",
-      "info": "",
+      "info": {"name": "0.006"},
       "capacity": 24,
       "fulfilled_room_constraints": [
         "seminarroom"
       ],
-      "required_time_constraints": []
+      "time_constraints": []
     },
     {
       "id": "0.007",
-      "info": "",
+      "info": {"name": "0.007"},
       "capacity": 17,
       "fulfilled_room_constraints": [
         "seminarroom"
       ],
-      "required_time_constraints": []
+      "time_constraints": []
     },
     {
       "id": "1.007",
-      "info": "",
+      "info": {"name": "1.007"},
       "capacity": 17,
       "fulfilled_room_constraints": [
         "seminarroom"
       ],
-      "required_time_constraints": []
+      "time_constraints": []
     },
     {
       "id": "0.008",
-      "info": "",
+      "info": {"name": "0.008"},
       "capacity": 26,
       "fulfilled_room_constraints": [
         "seminarroom"
       ],
-      "required_time_constraints": []
+      "time_constraints": []
     },
     {
       "id": "1.008",
-      "info": "",
+      "info": {"name": "1.008"},
       "capacity": 26,
       "fulfilled_room_constraints": [
         "seminarroom"
       ],
-      "required_time_constraints": []
+      "time_constraints": []
     },
     {
       "id": "0.011",
-      "info": "",
+      "info": {"name": "0.011"},
       "capacity": 32,
       "fulfilled_room_constraints": [
         "seminarroom"
       ],
-      "required_time_constraints": []
+      "time_constraints": []
     },
     {
       "id": "Kaiserplatz",
-      "info": "",
+      "info": {"name": "Kaiserplatz"},
       "capacity": 200,
       "fulfilled_room_constraints": [
         "bbgrroom"
       ],
-      "required_time_constraints": []
+      "time_constraints": []
     }
   ],
   "timeslots": {
@@ -424,11 +424,11 @@
   },
   "aks": [
     {
-      "required_room_constraints": [
+      "room_constraints": [
         "mvroom",
         "seminarroom"
       ],
-      "required_time_constraints": [
+      "time_constraints": [
         "mvtime"
       ],
       "duration": 2,
@@ -440,10 +440,10 @@
       }
     },
     {
-      "required_room_constraints": [
+      "room_constraints": [
         "bbgrroom"
       ],
-      "required_time_constraints": [
+      "time_constraints": [
         "bbgrtime"
       ],
       "info": {
