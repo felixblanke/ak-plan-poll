@@ -1,4 +1,427 @@
 {
+  "rooms": [
+    {
+      "id": "0.003",
+      "info": "",
+      "capacity": 17,
+      "fulfilled_room_constraints": [
+        "seminarroom",
+        "mvroom"
+      ],
+      "required_time_constraints": []
+    },
+    {
+      "id": "0.006",
+      "info": "",
+      "capacity": 24,
+      "fulfilled_room_constraints": [
+        "seminarroom"
+      ],
+      "required_time_constraints": []
+    },
+    {
+      "id": "0.007",
+      "info": "",
+      "capacity": 17,
+      "fulfilled_room_constraints": [
+        "seminarroom"
+      ],
+      "required_time_constraints": []
+    },
+    {
+      "id": "1.007",
+      "info": "",
+      "capacity": 17,
+      "fulfilled_room_constraints": [
+        "seminarroom"
+      ],
+      "required_time_constraints": []
+    },
+    {
+      "id": "0.008",
+      "info": "",
+      "capacity": 26,
+      "fulfilled_room_constraints": [
+        "seminarroom"
+      ],
+      "required_time_constraints": []
+    },
+    {
+      "id": "1.008",
+      "info": "",
+      "capacity": 26,
+      "fulfilled_room_constraints": [
+        "seminarroom"
+      ],
+      "required_time_constraints": []
+    },
+    {
+      "id": "0.011",
+      "info": "",
+      "capacity": 32,
+      "fulfilled_room_constraints": [
+        "seminarroom"
+      ],
+      "required_time_constraints": []
+    },
+    {
+      "id": "Kaiserplatz",
+      "info": "",
+      "capacity": 200,
+      "fulfilled_room_constraints": [
+        "bbgrroom"
+      ],
+      "required_time_constraints": []
+    }
+  ],
+  "timeslots": {
+    "info": {
+      "duration": "50 min",
+      "blocknames": [
+        ["Donnerstag", "Vormittag"],
+        ["Donnerstag", "Nachmittag"],
+        ["Donnerstag", "Abend"],
+        ["Freitag", "Vormittag"],
+        ["Freitag", "Nachmittag"],
+        ["Samstag", "Vormittag"],
+        ["Samstag", "Nachmittag"]
+      ]
+    },
+    "blocks": [
+      [
+        {
+          "id": "do-V-9",
+          "fulfilled_time_constraints": [
+            "block0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock5",
+            "notblock6"
+          ],
+          "info": {
+            "start": "do 9:00"
+          }
+        },
+        {
+          "id": "do-V-10",
+          "fulfilled_time_constraints": [
+            "block0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock5",
+            "notblock6"
+          ],
+          "info": {
+            "start": "do 10:00"
+          }
+        },
+        {
+          "id": "do-V-11",
+          "fulfilled_time_constraints": [
+            "block0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock5",
+            "notblock6"
+          ],
+          "info": {
+            "start": "do 11:00"
+          }
+        },
+        {
+          "id": "do-V-12",
+          "fulfilled_time_constraints": [
+            "block0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock5",
+            "notblock6"
+          ],
+          "info": {
+            "start": "do 12:00"
+          }
+        }
+      ],
+      [
+        {
+          "id": "do-N-13",
+          "fulfilled_time_constraints": [
+            "block1",
+            "notblock0",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock5",
+            "notblock6"
+          ],
+          "info": {
+            "start": "do 13:00"
+          }
+        },
+        {
+          "id": "do-N-14",
+          "fulfilled_time_constraints": [
+            "block1",
+            "notblock0",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock5",
+            "notblock6"
+          ],
+          "info": {
+            "start": "do 14:00"
+          }
+        },
+        {
+          "id": "do-N-15",
+          "fulfilled_time_constraints": [
+            "mvtime",
+            "block1",
+            "notblock0",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock5",
+            "notblock6"
+          ],
+          "info": {
+            "start": "do 15:00"
+          }
+        }
+      ],
+      [
+        {
+          "id": "do-A-17",
+          "fulfilled_time_constraints": [
+            "block2",
+            "notblock0",
+            "notblock1",
+            "notblock3",
+            "notblock4",
+            "notblock5",
+            "notblock6"
+          ],
+          "info": {
+            "start": "do 17:20"
+          }
+        },
+        {
+          "id": "do-A-18",
+          "fulfilled_time_constraints": [
+            "block2",
+            "notblock0",
+            "notblock1",
+            "notblock3",
+            "notblock4",
+            "notblock5",
+            "notblock6"
+          ],
+          "info": {
+            "start": "do 18:20"
+          }
+        }
+      ],
+      [
+        {
+          "id": "fr-V-9",
+          "fulfilled_time_constraints": [
+            "block3",
+            "notblock0",
+            "notblock1",
+            "notblock2",
+            "notblock4",
+            "notblock5",
+            "notblock6"
+          ],
+          "info": {
+            "start": "fr 9:00"
+          }
+        },
+        {
+          "id": "fr-V-10",
+          "fulfilled_time_constraints": [
+            "block3",
+            "notblock0",
+            "notblock1",
+            "notblock2",
+            "notblock4",
+            "notblock5",
+            "notblock6"
+          ],
+          "info": {
+            "start": "fr 10:00"
+          }
+        },
+        {
+          "id": "fr-V-11",
+          "fulfilled_time_constraints": [
+            "block3",
+            "notblock0",
+            "notblock1",
+            "notblock2",
+            "notblock4",
+            "notblock5",
+            "notblock6"
+          ],
+          "info": {
+            "start": "fr 11:00"
+          }
+        }
+      ],
+      [
+        {
+          "id": "fr-N-13",
+          "fulfilled_time_constraints": [
+            "block4",
+            "notblock0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock5",
+            "notblock6"
+          ],
+          "info": {
+            "start": "fr 13:00"
+          }
+        },
+        {
+          "id": "fr-N-14",
+          "fulfilled_time_constraints": [
+            "block4",
+            "notblock0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock5",
+            "notblock6"
+          ],
+          "info": {
+            "start": "fr 14:00"
+          }
+        }
+      ],
+      [
+        {
+          "id": "sa-V-9",
+          "fulfilled_time_constraints": [
+            "block5",
+            "notblock0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock6"
+          ],
+          "info": {
+            "start": "sa 9:00"
+          }
+        },
+        {
+          "id": "sa-V-10",
+          "fulfilled_time_constraints": [
+            "block5",
+            "notblock0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock6"
+          ],
+          "info": {
+            "start": "sa 10:00"
+          }
+        },
+        {
+          "id": "sa-V-11",
+          "fulfilled_time_constraints": [
+            "bbgrtime",
+            "block5",
+            "notblock0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock6"
+          ],
+          "info": {
+            "start": "sa 11:00"
+          }
+        },
+        {
+          "id": "sa-V-12",
+          "fulfilled_time_constraints": [
+            "bbgrtime",
+            "block5",
+            "notblock0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock6"
+          ],
+          "info": {
+            "start": "sa 12:00"
+          }
+        }
+      ],
+      [
+        {
+          "id": "sa-N-14",
+          "fulfilled_time_constraints": [
+            "block6",
+            "notblock0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock5"
+          ],
+          "info": {
+            "start": "sa 14:00"
+          }
+        },
+        {
+          "id": "sa-N-15",
+          "fulfilled_time_constraints": [
+            "block6",
+            "notblock0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock5"
+          ],
+          "info": {
+            "start": "sa 15:00"
+          }
+        },
+        {
+          "id": "sa-A-16",
+          "fulfilled_time_constraints": [
+            "block6",
+            "notblock0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock5"
+          ],
+          "info": {
+            "start": "sa 16:00"
+          }
+        }
+      ]
+    ]
+  },
   "aks": [
     {
       "info": {
@@ -351,5 +774,12 @@
         "reso": false
       }
     }
-  ]
+  ],
+  "participants": [],
+  "info": {
+    "name": "This is the input for the KoMa90 in Bonn",
+    "author": "Lorenzo Conti and Felix Blanke",
+    "title": "KoMa90",
+    "block_info_html": "<ul style='margin-left: 20px;' class='mb-3'><li>Vormittag: Zeit vor dem Mittagessen</li><li>Nachmittag: Zeit nach dem Mittagessen</li><li>Abend: Zeit vor dem Abendessen (ca. 17-19Uhr, nur Do)</li></ul>"
+  }
 }
