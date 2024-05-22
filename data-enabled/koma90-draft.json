@@ -735,7 +735,7 @@
     {
       "info": {
         "name": "AK Meta",
-        "description": "ua. Laptopdiscouragement",
+        "description": "Meta Diskussionen über die KoMa und die Arbeitsweisen ua. Laptopdiscouragement",
         "head": "Justus (Darmstadt)",
         "duration": "1",
         "reso": false
@@ -762,7 +762,7 @@
     {
       "info": {
         "name": "AK Orga",
-        "description": "",
+        "description": "Austausch über die Organisation einer KoMa",
         "head": "Nika (Darmstadt)",
         "duration": "1",
         "reso": false
@@ -795,6 +795,7 @@
         "reso": false
       }
     }
+<<<<<<< Updated upstream
   ],
   "participants": [],
   "info": {
@@ -804,3 +805,7 @@
     "block_info_html": "<ul style='margin-left: 20px;' class='mb-3'><li>Vormittag: Zeit vor dem Mittagessen</li><li>Nachmittag: Zeit nach dem Mittagessen</li><li>Abend: Zeit vor dem Abendessen (ca. 17-19Uhr, nur Do)</li></ul>"
   }
 }
+=======
+  ]
+}
+>>>>>>> Stashed changes
