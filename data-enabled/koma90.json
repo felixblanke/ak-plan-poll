@@ -71,7 +71,7 @@
       "fulfilled_room_constraints": [
         "bbgrroom"
       ],
-      "time_constraints": []
+      "time_constraints": ["bbgrtime"]
     }
   ],
   "timeslots": {
@@ -477,8 +477,8 @@
         "description": "Austausch über Awareness-Arbeit im Rahmen von FSR Veranstaltungen.Wie ist es möglich Grundstrukturen der Awareness auch auf kleinen Veranstaltungen mit wenig Helfenden zu gewährleisten?",
         "head": "Billes (HU Berlin)",
         "duration": "2",
-        "reso": "on"
-      }
+        "reso": true
+      }, "time_constraint": ["notblock5", "notblock6"]
     },
     {
       "info": {
@@ -513,8 +513,8 @@
         "description": "Hieraus soll eine Resolution werden, wie wir uns zu Frauenquoten in der Lehre und Gremien positionieren. Außerdem soll für bereits bestehende Quoten präzisiert werden, wie wir uns deren Umsetzung wünschen würden, insbesondere auch im Hinblick auf die Rechte von Trans*-Personen, die (Nicht-)Existenz von Geschlechtsregistern etc. (siehe auch AK Geschlechtergleichstellung KoMa89).",
         "head": "Kattrin (Berlin)",
         "duration": "1",
-        "reso": "on"
-      }
+        "reso": true
+      }, "time_constraint": ["notblock5", "notblock6"]
     },
     {
       "info": {
@@ -522,8 +522,8 @@
         "description": "Aus dem AK Geschlechtergleichstellung der letzten KoMa hervorgegangen, wollen wir eine Resolution erarbeiten, in welcher wir uns zur Verwendung geschlechtergerechter Sprache an Hochschulen positionieren. Außerdem soll ein Fachschaftsleitfaden zu sinnvollem (Ent-)Gendern in der Fachschaftsarbeit entstehen. Eventuell muss das beides in 2 AKs gesplittet werden.",
         "head": "Raven (Berlin)",
         "duration": "1",
-        "reso": "on"
-      }
+        "reso": true
+      }, "time_constraint": ["notblock5", "notblock6"]
     },
     {
       "info": {
@@ -594,8 +594,8 @@
         "description": "Austausch über den Studiengang Lehramt mit anderen Unis. Ansprechen von Problemen und vielleicht auch eine Lösung dazu finden.",
         "head": "Johannes (Passau)",
         "duration": "2",
-        "reso": "on"
-      }
+        "reso": true
+      }, "time_constraint": ["notblock5", "notblock6"]
     },
     {
       "info": {
@@ -612,8 +612,8 @@
         "description": "Nachhaltigkeit und Klimaneutralität sind für Universitäten wichtige Zielen,seit Deutschland sich im Pariser Klimaabkommen zu Einspaarungen verpflichtet hat.In diesem AK sollen Erfahrungen und Informationen  über aktive Prozesse an Universitäten,mögliche weitere Prozesse und die Rolle die Mathematikfachschaften dabei spielen können, ausgetauscht werden.",
         "head": "David (Halle)",
         "duration": "2",
-        "reso": "on"
-      }
+        "reso": true
+      }, "time_constraint": ["notblock5", "notblock6"]
     },
     {
       "info": {
@@ -621,8 +621,8 @@
         "description": "Reso-AK zur Ausarbeitung einer Resolution zur Bereitstellung von Vorlesungsskripten.",
         "head": "Lorenzo (Bonn)",
         "duration": "1",
-        "reso": "on"
-      }
+        "reso": true
+      }, "time_constraint": ["notblock5", "notblock6"]
     },
     {
       "info": {
@@ -666,8 +666,8 @@
         "description": "Austausch über Schwierigkeiten bei der Tutorienfinanzierung an den verschiedenen Unis: Wie ist der Stand? Welche Maßnahmen werden ergriffen? Was wären gute Maßnahmen?Eventuell könnte das auch in einer Reso enden.",
         "head": "Helen (Jena), Kathi (Karlsruhe)",
         "duration": "1",
-        "reso": "on"
-      }
+        "reso": true
+      }, "time_constraint": ["notblock5", "notblock6"]
     },
     {
       "info": {
@@ -675,8 +675,8 @@
         "description": "Nachdem wir uns auf der 89.KoMa über Vergütung für Fachschaftsarbeit Ausgetauscht haben, kamen wir zu dem Ergebnis dass eine Vergütung für Arbeit in Gremien, bei denen die Uni studentische Vertreter fordert, insbesondere Berufungskommissionen erwünscht wäre.In diesem AK wollen wir uns nochmal darüber Austauschen und eventuell eine Reso dazu verfassen.",
         "head": "Andreas (Magdeburg)",
         "duration": "1",
-        "reso": "on"
-      }
+        "reso": true
+      }, "time_constraint": ["notblock5", "notblock6"]
     },
     {
       "info": {
@@ -794,6 +794,13 @@
         "duration": "1",
         "reso": false
       }
+    },
+    {
+      "info": {
+        "name": "AK Reso polieren",
+        "duration": 3,
+      },
+      "time_constraints": ["block6"]
     }
   ],
   "participants": [],
