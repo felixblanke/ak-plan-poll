@@ -230,15 +230,6 @@
     },
     {
       "info": {
-        "name": "AK KIF-KoMa  II",
-        "description": "Die KoMa 92 in Passau findet zusammen mit der KIF 53,0 statt. Lasst uns darüber reden, wie wir das so cool wie möglich hinkriegen.Die Orga erzählt, welche Gemeinsamkeiten und Unterschiede sie schon erkannt haben, und wie der aktueller Plan aussieht.Dann Diskutieren wir darüber, was wir noch besser machen können, was die KoMa von der KIF lernen kann und umgekehrt, und was bei der Planung vielleicht noch übersehen wurde. Dies ist eine Fortsetzung des ersten AKs zu diesem Thema.",
-        "head": "Sven (Uni Passau)",
-        "duration": "1",
-        "reso": false
-      }
-    },
-    {
-      "info": {
         "name": "AK Lehramt",
         "description": "Austausch über den Studiengang Lehramt mit anderen Unis. Ansprechen von Problemen und vielleicht auch eine Lösung dazu finden.",
         "head": "Johannes (Passau)",
@@ -326,6 +317,15 @@
         "head": "Raven (Berlin)",
         "duration": "2",
         "reso": true
+      }
+    },
+    {
+      "info": {
+        "name": "AK KIF-KoMa  II",
+        "description": "Die KoMa 92 in Passau findet zusammen mit der KIF 53,0 statt. Lasst uns darüber reden, wie wir das so cool wie möglich hinkriegen.Die Orga erzählt, welche Gemeinsamkeiten und Unterschiede sie schon erkannt haben, und wie der aktueller Plan aussieht.Dann Diskutieren wir darüber, was wir noch besser machen können, was die KoMa von der KIF lernen kann und umgekehrt, und was bei der Planung vielleicht noch übersehen wurde. Dies ist eine Fortsetzung des ersten AKs zu diesem Thema.",
+        "head": "Sven (Uni Passau)",
+        "duration": "1",
+        "reso": false
       }
     }
   ],
