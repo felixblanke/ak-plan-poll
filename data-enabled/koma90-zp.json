@@ -1,0 +1,339 @@
+{
+  "rooms": [
+    {
+      "id": "0.003",
+      "info": {"name": "0.003"},
+      "capacity": 17,
+      "fulfilled_room_constraints": [
+        "seminarroom"
+      ],
+      "time_constraints": []
+    },
+    {
+      "id": "0.006",
+      "info": {"name": "0.006"},
+      "capacity": 24,
+      "fulfilled_room_constraints": [
+        "seminarroom"
+      ],
+      "time_constraints": []
+    },
+    {
+      "id": "0.007",
+      "info": {"name": "0.007"},
+      "capacity": 17,
+      "fulfilled_room_constraints": [
+        "seminarroom"
+      ],
+      "time_constraints": []
+    },
+    {
+      "id": "1.007",
+      "info": {"name": "1.007"},
+      "capacity": 17,
+      "fulfilled_room_constraints": [
+        "seminarroom"
+      ],
+      "time_constraints": []
+    },
+    {
+      "id": "0.008",
+      "info": {"name": "0.008"},
+      "capacity": 26,
+      "fulfilled_room_constraints": [
+        "seminarroom"
+      ],
+      "time_constraints": []
+    },
+    {
+      "id": "0.011",
+      "info": {"name": "0.011"},
+      "capacity": 32,
+      "fulfilled_room_constraints": [
+        "seminarroom"
+      ],
+      "time_constraints": []
+    },
+    {
+      "id": "Kaiserplatz",
+      "info": {"name": "Kaiserplatz"},
+      "capacity": 200,
+      "fulfilled_room_constraints": [
+        "bbgrroom"
+      ],
+      "time_constraints": ["bbgrtime"]
+    }
+  ],
+  "timeslots": {
+    "info": {
+      "duration": "50 min",
+      "blocknames": [
+        ["Samstag", "Vormittag"],
+        ["Samstag", "Nachmittag"]
+      ]
+    },
+    "blocks": [
+      [
+        {
+          "id": "sa-V-9",
+          "fulfilled_time_constraints": [
+            "block5",
+            "notblock0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock6"
+          ],
+          "info": {
+            "start": "sa 9:00"
+          }
+        },
+        {
+          "id": "sa-V-10",
+          "fulfilled_time_constraints": [
+            "block5",
+            "notblock0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock6"
+          ],
+          "info": {
+            "start": "sa 10:00"
+          }
+        },
+        {
+          "id": "sa-V-11",
+          "fulfilled_time_constraints": [
+            "bbgrtime",
+            "block5",
+            "notblock0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock6"
+          ],
+          "info": {
+            "start": "sa 11:00"
+          }
+        },
+        {
+          "id": "sa-V-12",
+          "fulfilled_time_constraints": [
+            "bbgrtime",
+            "block5",
+            "notblock0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock6"
+          ],
+          "info": {
+            "start": "sa 12:00"
+          }
+        }
+      ],
+      [
+        {
+          "id": "sa-N-14",
+          "fulfilled_time_constraints": [
+            "block6",
+            "notblock0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock5"
+          ],
+          "info": {
+            "start": "sa 14:00"
+          }
+        },
+        {
+          "id": "sa-N-15",
+          "fulfilled_time_constraints": [
+            "block6",
+            "notblock0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock5"
+          ],
+          "info": {
+            "start": "sa 15:00"
+          }
+        },
+        {
+          "id": "sa-A-16",
+          "fulfilled_time_constraints": [
+            "block6",
+            "notblock0",
+            "notblock1",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock5"
+          ],
+          "info": {
+            "start": "sa 16:00"
+          }
+        }
+      ]
+    ]
+  },
+  "aks": [
+    {
+      "room_constraints": [
+        "bbgrroom"
+      ],
+      "time_constraints": [
+        "bbgrtime"
+      ],
+      "info": {
+        "name": "AK praktischer Antifascismus",
+        "description": "11 Kaiserplatz",
+        "head": "Louis (Bonn)",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK Awareness",
+        "description": "Austausch über Awareness-Arbeit im Rahmen von FSR Veranstaltungen.Wie ist es möglich Grundstrukturen der Awareness auch auf kleinen Veranstaltungen mit wenig Helfenden zu gewährleisten?",
+        "head": "Billes (HU Berlin)",
+        "duration": "2",
+        "reso": true
+      }
+    },
+    {
+      "info": {
+        "name": "AK Englischsprachiger Master",
+        "description": "Auf der letzten KoMa gab es einen AK zu englischsprachigen Studiengängen. Viel quantitatives ist dabei leider nicht herumgekommen. Da weiterhin Universitäten mit englischsprachigen Master-Studiengängen versuchen, ausländische Studierende anzuwerben, würden wir uns über einen Austausch mit Zahlen, Daten und sonstigen Erfahrungen freuen, wenn das gewünscht ist (und jemand was anzubieten hat).",
+        "head": "Hannes (Essen)",
+        "duration": "1",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK IT-Infrastruktur",
+        "description": "Austausch ueber und gegebenfalls produktive Arbeit an IT-Infrastruktur (primaer der KoMa selbst, aber wir koennen auch gerne ueber FSR-Infrastruktur reden).",
+        "head": "Mmarx (TU Dresden)",
+        "duration": "2",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK KIF-KoMa  II",
+        "description": "Die KoMa 92 in Passau findet zusammen mit der KIF 53,0 statt. Lasst uns darüber reden, wie wir das so cool wie möglich hinkriegen.Die Orga erzählt, welche Gemeinsamkeiten und Unterschiede sie schon erkannt haben, und wie der aktueller Plan aussieht.Dann Diskutieren wir darüber, was wir noch besser machen können, was die KoMa von der KIF lernen kann und umgekehrt, und was bei der Planung vielleicht noch übersehen wurde. Dies ist eine Fortsetzung des ersten AKs zu diesem Thema.",
+        "head": "Sven (Uni Passau)",
+        "duration": "1",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK Lehramt",
+        "description": "Austausch über den Studiengang Lehramt mit anderen Unis. Ansprechen von Problemen und vielleicht auch eine Lösung dazu finden.",
+        "head": "Johannes (Passau)",
+        "duration": "2",
+        "reso": true
+      }
+    },
+    {
+      "info": {
+        "name": "AK Wiki",
+        "description": "Wr wollen Texte im Wiki eintragen.",
+        "head": "Mmarx (Dresden)",
+        "duration": "1",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK AK AK AK AK AK Plan Optimierung",
+        "description": "",
+        "head": "Felix (Bonn)",
+        "duration": "1",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK Meta",
+        "description": "Meta Diskussionen über die KoMa und die Arbeitsweisen ua. Laptopdiscouragement",
+        "head": "Justus (Darmstadt)",
+        "duration": "1",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK Orga",
+        "description": "Austausch über die Organisation einer KoMa",
+        "head": "Nika (Darmstadt)",
+        "duration": "1",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK ideale Studi-Organe-Struktur",
+        "description": "Gremien der Studierendenschaft -> Wiki mit best practicses",
+        "head": "Büsra (Erlangen)",
+        "duration": "1",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK FS-Teambuilding",
+        "description": "Austausch",
+        "head": "Büsra (Erlangen)",
+        "duration": "1",
+        "reso": false
+      }
+    },
+    {
+      "info": {
+        "name": "AK Reso polieren",
+        "head": "N/A",
+        "description": "N/A",
+        "reso": false,
+        "duration": 3
+      },
+      "time_constraints": ["block6"]
+    },
+    {
+      "info": {
+        "name": "AK Vergütung für Berufungskommissionen II",
+        "description": "Nachdem wir uns auf der 89.KoMa über Vergütung für Fachschaftsarbeit Ausgetauscht haben, kamen wir zu dem Ergebnis dass eine Vergütung für Arbeit in Gremien, bei denen die Uni studentische Vertreter fordert, insbesondere Berufungskommissionen erwünscht wäre.In diesem AK wollen wir uns nochmal darüber Austauschen und eventuell eine Reso dazu verfassen. Fortführung.",
+        "head": "Andreas (Magdeburg)",
+        "duration": "2",
+        "reso": true
+      }
+    },
+    {
+      "info": {
+        "name": "AK: Gendern und geschlechtergerechte Sprache an Hochschulen II",
+        "description": "Aus dem AK Geschlechtergleichstellung der letzten KoMa hervorgegangen, wollen wir eine Resolution erarbeiten, in welcher wir uns zur Verwendung geschlechtergerechter Sprache an Hochschulen positionieren.",
+        "head": "Raven (Berlin)",
+        "duration": "2",
+        "reso": true
+      }
+    }
+  ],
+  "participants": [],
+  "info": {
+    "name": "This is the input for the KoMa90 in Bonn, version 2",
+    "author": "Lorenzo Conti and Felix Blanke",
+    "title": "KoMa90",
+    "block_info_html": "<ul style='margin-left: 20px;' class='mb-3'><li>Vormittag: Zeit vor dem Mittagessen</li><li>Nachmittag: Zeit nach dem Mittagessen</li><li>Abend: Zeit vor dem Abendessen (ca. 17-19Uhr, nur Do)</li></ul>"
+  }
+}
