@@ -1,12 +1,12 @@
+import json
+import uuid
 from collections import defaultdict
 from itertools import chain
-import json
 from pathlib import Path
 
-from flask import Flask, render_template, url_for, request, redirect
-from werkzeug.security import safe_join
+from flask import Flask, redirect, render_template, request, url_for
 from markupsafe import escape
-import uuid
+from werkzeug.security import safe_join
 
 app = Flask(__name__)
 app.config["DATA_DIR"] = "data"
@@ -17,8 +17,10 @@ app.config.from_file("config.json", load=json.load, silent=True)
 def get_data_file(poll_name: str) -> Path:
     return Path(safe_join(app.config["DATA_DIR"], f"{poll_name}.json"))
 
+
 def get_export_dir(poll_name: str) -> Path:
     return Path(safe_join(app.config["EXPORT_DIR"], poll_name))
+
 
 def read_ak_data(poll_name: str) -> dict | None:
     try:
@@ -31,6 +33,7 @@ def read_ak_data(poll_name: str) -> dict | None:
 def write_ak_data(poll_name: str, data: dict) -> dict | None:
     with get_data_file(poll_name).open("w") as ff:
         return json.dump(data, ff, indent=2, ensure_ascii=False)
+
 
 def read_ak_list(data: dict, default: list[str] | None = None) -> list[str] | None:
     try:
@@ -126,6 +129,7 @@ def get_form(poll_name: str):
     else:
         return render_template("unknown.html")
 
+
 @app.route("/create/<poll_name>", methods=["GET", "POST"])
 def create_poll(poll_name: str):
     data = read_ak_data(poll_name)
@@ -144,7 +148,9 @@ def create_poll(poll_name: str):
             field = key.split("_")[1]
             ak_dict[ak_id]["info"][field] = val
 
-        data["aks"] = list(map(lambda x: x[1], sorted(ak_dict.items(), key=lambda x: x[0])))
+        data["aks"] = list(
+            map(lambda x: x[1], sorted(ak_dict.items(), key=lambda x: x[0]))
+        )
 
         new_ak_id = max(ak_dict.keys()) + 1 if ak_dict else 0
         new_ak_dict = {}
