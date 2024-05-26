@@ -11,6 +11,7 @@ from werkzeug.security import safe_join
 app = Flask(__name__)
 app.config["DATA_DIR"] = "data"
 app.config["EXPORT_DIR"] = "export"
+app.config["DEFAULT_DURATION"] = 2
 app.config.from_file("config.json", load=json.load, silent=True)
 
 
@@ -147,7 +148,11 @@ def create_poll(poll_name: str):
                 continue
             ak_id = int(key.split("_")[0][2:])
             field = key.split("_")[1]
-            ak_dict[ak_id]["info"][field] = val
+            if field in ["duration"]:
+                # keys not in info:
+                ak_dict[ak_id][field] = int(val)
+            else:
+                ak_dict[ak_id]["info"][field] = val
 
         data["aks"] = list(
             map(lambda x: x[1], sorted(ak_dict.items(), key=lambda x: x[0]))
@@ -162,12 +167,17 @@ def create_poll(poll_name: str):
             if "akneu_reso" in form_data.keys():
                 new_ak_dict["reso"] = True
 
+            new_ak_dict = {
+                "info": new_ak_dict,
+                "duration": int(form_data["akneu_duration"])
+            }
+
         for v in ak_dict.values():
             if "reso" not in v["info"]:
                 v["info"]["reso"] = False
 
         if new_ak_dict:
-            data["aks"].append({"info": new_ak_dict})
+            data["aks"].append(new_ak_dict)
 
         write_ak_data(poll_name, data)
 
@@ -181,6 +191,7 @@ def create_poll(poll_name: str):
         title=title,
         aks=ak_list,
         poll_name=poll_name,
+        default_duration=app.config["DEFAULT_DURATION"],
     )
 
 
