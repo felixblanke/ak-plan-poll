@@ -191,21 +191,6 @@
       ],
       [
         {
-          "id": "do-N-13",
-          "fulfilled_time_constraints": [
-            "block1",
-            "notblock0",
-            "notblock2",
-            "notblock3",
-            "notblock4",
-            "notblock5",
-            "notblock6"
-          ],
-          "info": {
-            "start": "do 13:00"
-          }
-        },
-        {
           "id": "do-N-14",
           "fulfilled_time_constraints": [
             "block1",
@@ -234,6 +219,22 @@
           ],
           "info": {
             "start": "do 15:00"
+          }
+        },
+        {
+          "id": "do-N-16",
+          "fulfilled_time_constraints": [
+            "mvtime",
+            "block1",
+            "notblock0",
+            "notblock2",
+            "notblock3",
+            "notblock4",
+            "notblock5",
+            "notblock6"
+          ],
+          "info": {
+            "start": "do 16:00"
           }
         }
       ],
