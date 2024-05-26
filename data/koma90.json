@@ -499,7 +499,8 @@
         "head": "Alex (Uni Göttingen)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -508,7 +509,8 @@
         "head": "Jan (Essen)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -517,7 +519,11 @@
         "head": "Billes (HU Berlin)",
         "duration": "2",
         "reso": true
-      }, "time_constraints": ["notblock5", "notblock6"]
+      },
+      "time_constraints": [
+        "notblock5",
+        "notblock6"
+      ]
     },
     {
       "info": {
@@ -526,7 +532,8 @@
         "head": "Mmarx (TU Dresden)",
         "duration": "2",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -535,7 +542,8 @@
         "head": "Hannes (Essen)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -544,7 +552,8 @@
         "head": "Sven und Sina (Uni Passau)",
         "duration": "2",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -553,7 +562,11 @@
         "head": "Kattrin (Berlin)",
         "duration": "1",
         "reso": true
-      }, "time_constraints": ["notblock5", "notblock6"]
+      },
+      "time_constraints": [
+        "notblock5",
+        "notblock6"
+      ]
     },
     {
       "info": {
@@ -562,7 +575,11 @@
         "head": "Raven (Berlin)",
         "duration": "1",
         "reso": true
-      }, "time_constraints": ["notblock5", "notblock6"]
+      },
+      "time_constraints": [
+        "notblock5",
+        "notblock6"
+      ]
     },
     {
       "info": {
@@ -571,7 +588,8 @@
         "head": "Johannes (Passau)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -580,7 +598,8 @@
         "head": "Frauke (Darmstadt)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -589,7 +608,8 @@
         "head": "Mmarx (TU Dresden)",
         "duration": "2",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -598,7 +618,8 @@
         "head": "Felix (LUH)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -607,7 +628,8 @@
         "head": "Sven (Uni Passau)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -616,7 +638,8 @@
         "head": "Katharina (Göttingen)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -625,7 +648,8 @@
         "head": "Uschij (Jena)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -634,7 +658,11 @@
         "head": "Johannes (Passau)",
         "duration": "2",
         "reso": true
-      }, "time_constraints": ["notblock5", "notblock6"]
+      },
+      "time_constraints": [
+        "notblock5",
+        "notblock6"
+      ]
     },
     {
       "info": {
@@ -643,7 +671,8 @@
         "head": "Dustin (Leipzip)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -652,7 +681,11 @@
         "head": "David (Halle)",
         "duration": "2",
         "reso": true
-      }, "time_constraints": ["notblock5", "notblock6"]
+      },
+      "time_constraints": [
+        "notblock5",
+        "notblock6"
+      ]
     },
     {
       "info": {
@@ -661,7 +694,11 @@
         "head": "Lorenzo (Bonn)",
         "duration": "1",
         "reso": true
-      }, "time_constraints": ["notblock5", "notblock6"]
+      },
+      "time_constraints": [
+        "notblock5",
+        "notblock6"
+      ]
     },
     {
       "info": {
@@ -670,7 +707,8 @@
         "head": "Uschi (Jena)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -679,7 +717,8 @@
         "head": "Ole (Essen)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -688,7 +727,8 @@
         "head": "Johannes (Passau)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -697,7 +737,8 @@
         "head": "Moritz (Dresden)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -706,7 +747,11 @@
         "head": "Helen (Jena), Kathi (Karlsruhe)",
         "duration": "1",
         "reso": true
-      }, "time_constraints": ["notblock5", "notblock6"]
+      },
+      "time_constraints": [
+        "notblock5",
+        "notblock6"
+      ]
     },
     {
       "info": {
@@ -715,7 +760,11 @@
         "head": "Andreas (Magdeburg)",
         "duration": "1",
         "reso": true
-      }, "time_constraints": ["notblock5", "notblock6"]
+      },
+      "time_constraints": [
+        "notblock5",
+        "notblock6"
+      ]
     },
     {
       "info": {
@@ -724,7 +773,8 @@
         "head": "Büsra (Erlangen)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -733,7 +783,8 @@
         "head": "Louis (Bonn)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -742,7 +793,8 @@
         "head": "Mmarx (Dresden)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -751,7 +803,8 @@
         "head": "Maxi (Erlangen)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -760,7 +813,8 @@
         "head": "Stefan (Heidelberg)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -769,7 +823,8 @@
         "head": "Felix (Bonn)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -778,7 +833,8 @@
         "head": "Justus (Darmstadt)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -787,7 +843,8 @@
         "head": "Luca (Düsseldorf)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -796,7 +853,8 @@
         "head": "Helen (Jena)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -805,7 +863,8 @@
         "head": "Nika (Darmstadt)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -814,7 +873,8 @@
         "head": "Büsra (Erlangen)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -823,7 +883,8 @@
         "head": "Maxi (Erlangen)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -832,7 +893,8 @@
         "head": "Büsra (Erlangen)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -842,7 +904,9 @@
         "reso": false,
         "duration": 3
       },
-      "time_constraints": ["block6"]
+      "time_constraints": [
+        "block6"
+      ]
     }
   ],
   "participants": [],

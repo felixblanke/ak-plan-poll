@@ -2,7 +2,9 @@
   "rooms": [
     {
       "id": "0.003",
-      "info": {"name": "0.003"},
+      "info": {
+        "name": "0.003"
+      },
       "capacity": 17,
       "fulfilled_room_constraints": [
         "seminarroom"
@@ -11,7 +13,9 @@
     },
     {
       "id": "0.006",
-      "info": {"name": "0.006"},
+      "info": {
+        "name": "0.006"
+      },
       "capacity": 24,
       "fulfilled_room_constraints": [
         "seminarroom"
@@ -20,7 +24,9 @@
     },
     {
       "id": "0.007",
-      "info": {"name": "0.007"},
+      "info": {
+        "name": "0.007"
+      },
       "capacity": 17,
       "fulfilled_room_constraints": [
         "seminarroom"
@@ -29,7 +35,9 @@
     },
     {
       "id": "1.007",
-      "info": {"name": "1.007"},
+      "info": {
+        "name": "1.007"
+      },
       "capacity": 17,
       "fulfilled_room_constraints": [
         "seminarroom"
@@ -38,7 +46,9 @@
     },
     {
       "id": "0.008",
-      "info": {"name": "0.008"},
+      "info": {
+        "name": "0.008"
+      },
       "capacity": 26,
       "fulfilled_room_constraints": [
         "seminarroom"
@@ -47,7 +57,9 @@
     },
     {
       "id": "0.011",
-      "info": {"name": "0.011"},
+      "info": {
+        "name": "0.011"
+      },
       "capacity": 32,
       "fulfilled_room_constraints": [
         "seminarroom"
@@ -56,20 +68,30 @@
     },
     {
       "id": "Kaiserplatz",
-      "info": {"name": "Kaiserplatz"},
+      "info": {
+        "name": "Kaiserplatz"
+      },
       "capacity": 200,
       "fulfilled_room_constraints": [
         "bbgrroom"
       ],
-      "time_constraints": ["bbgrtime"]
+      "time_constraints": [
+        "bbgrtime"
+      ]
     }
   ],
   "timeslots": {
     "info": {
       "duration": "50 min",
       "blocknames": [
-        ["Samstag", "Vormittag"],
-        ["Samstag", "Nachmittag"]
+        [
+          "Samstag",
+          "Vormittag"
+        ],
+        [
+          "Samstag",
+          "Nachmittag"
+        ]
       ]
     },
     "blocks": [
@@ -208,7 +230,8 @@
         "head": "Billes (HU Berlin)",
         "duration": "2",
         "reso": true
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -217,7 +240,8 @@
         "head": "Hannes (Essen)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -226,7 +250,8 @@
         "head": "Mmarx (TU Dresden)",
         "duration": "2",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -235,7 +260,8 @@
         "head": "Johannes (Passau)",
         "duration": "2",
         "reso": true
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -244,7 +270,8 @@
         "head": "Mmarx (Dresden)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -253,7 +280,8 @@
         "head": "Felix (Bonn)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -262,7 +290,8 @@
         "head": "Justus (Darmstadt)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -271,7 +300,8 @@
         "head": "Nika (Darmstadt)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -280,7 +310,8 @@
         "head": "Büsra (Erlangen)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -289,7 +320,8 @@
         "head": "Büsra (Erlangen)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -299,7 +331,9 @@
         "reso": false,
         "duration": 3
       },
-      "time_constraints": ["block6"]
+      "time_constraints": [
+        "block6"
+      ]
     },
     {
       "info": {
@@ -308,7 +342,8 @@
         "head": "Andreas (Magdeburg)",
         "duration": "2",
         "reso": true
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -317,7 +352,8 @@
         "head": "Raven (Berlin)",
         "duration": "2",
         "reso": true
-      }
+      },
+      "time_constraints": []
     },
     {
       "info": {
@@ -326,7 +362,8 @@
         "head": "Sven (Uni Passau)",
         "duration": "1",
         "reso": false
-      }
+      },
+      "time_constraints": []
     }
   ],
   "participants": [],
