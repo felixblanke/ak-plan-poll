@@ -234,7 +234,9 @@
         "head": "Billes (HU Berlin)",
         "reso": true
       },
-      "time_constraints": [],
+      "time_constraints": [
+        "block0"
+      ],
       "room_constraints": [],
       "duration": 2
     },
@@ -267,7 +269,9 @@
         "head": "Johannes (Passau)",
         "reso": true
       },
-      "time_constraints": [],
+      "time_constraints": [
+        "block0"
+      ],
       "room_constraints": [],
       "duration": 2
     },
@@ -357,7 +361,9 @@
         "head": "Andreas (Magdeburg)",
         "reso": true
       },
-      "time_constraints": [],
+      "time_constraints": [
+        "block0"
+      ],
       "room_constraints": [],
       "duration": 2
     },
@@ -368,7 +374,9 @@
         "head": "Raven (Berlin)",
         "reso": true
       },
-      "time_constraints": [],
+      "time_constraints": [
+        "block0"
+      ],
       "room_constraints": [],
       "duration": 2
     },
