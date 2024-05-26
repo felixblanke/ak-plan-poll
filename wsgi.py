@@ -64,11 +64,12 @@ def read_info(data: dict, key: str, default: str | None = None) -> str | None:
 
 @app.route("/<poll_name>", methods=["POST"])
 def post_result(poll_name: str):
+    num_blocks = len(read_blocks(read_ak_data(poll_name), default={}))
+
     participant = {
         "preferences": [],
-        "time_constraints": [f"notblock{i}" for i in range(7)],
+        "time_constraints": [f"notblock{i}" for i in range(num_blocks)],
     }
-    # TODO: replace hardcoded num blocks by reasonable code
 
     participant["info"] = {
         "name": request.form["name"],
