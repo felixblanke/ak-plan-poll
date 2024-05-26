@@ -29,12 +29,8 @@ def read_ak_data(poll_name: str) -> dict | None:
 
 
 def write_ak_data(poll_name: str, data: dict) -> dict | None:
-    try:
-        with get_data_file(poll_name).open("w") as ff:
-            return json.dump(data, ff, indent=2, ensure_ascii=False)
-    except:
-        return None
-
+    with get_data_file(poll_name).open("w") as ff:
+        return json.dump(data, ff, indent=2, ensure_ascii=False)
 
 def read_ak_list(data: dict, default: list[str] | None = None) -> list[str] | None:
     try:
