@@ -52,8 +52,14 @@ To create your configuration, you can follow this minimal example:
 }
 ```
 
-### Export
+### Available views
+
+This apps **main view** allows participants to enter their time availability and workshop preference.
+This view is accessible at `your-conference.example.com/result/<poll_name>`.
 
 The response of each participant will be stored at `EXPORT_DIR/<poll_name>/<uuid>.json` where `<uuid>` is a generated UUID1.
 
-An ad hoc evaluation of all responses so far can be accessed at `your-conference.example.com/result/<poll_name>`.
+An **ad hoc evaluation** of all responses so far can be accessed at `your-conference.example.com/result/<poll_name>`.
+There, the total number of participant entries so far as well as some aggregated info per workshop is listed.
+
+A **barebones view to edit workshop info as well as adding new workshops** is available at `your-conference.example.com/create/<poll_name>`.
