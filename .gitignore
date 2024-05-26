@@ -1,3 +1,4 @@
+*export*.json
 *.csv
 config.json
 __pycache__
