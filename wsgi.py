@@ -9,7 +9,7 @@ from markupsafe import escape
 import uuid
 
 app = Flask(__name__)
-app.config["DATA_DIR"] = "data-enabled"
+app.config["DATA_DIR"] = "data"
 app.config["EXPORT_DIR"] = "export"
 app.config.from_file("config.json", load=json.load, silent=True)
 
