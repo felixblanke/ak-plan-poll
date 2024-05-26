@@ -2,7 +2,9 @@
   "rooms": [
     {
       "id": "0.003",
-      "info": {"name": "0.003"},
+      "info": {
+        "name": "0.003"
+      },
       "capacity": 17,
       "fulfilled_room_constraints": [
         "seminarroom",
@@ -12,7 +14,9 @@
     },
     {
       "id": "0.006",
-      "info": {"name": "0.006"},
+      "info": {
+        "name": "0.006"
+      },
       "capacity": 24,
       "fulfilled_room_constraints": [
         "seminarroom"
@@ -21,7 +25,9 @@
     },
     {
       "id": "0.007",
-      "info": {"name": "0.007"},
+      "info": {
+        "name": "0.007"
+      },
       "capacity": 17,
       "fulfilled_room_constraints": [
         "seminarroom"
@@ -30,7 +36,9 @@
     },
     {
       "id": "1.007",
-      "info": {"name": "1.007"},
+      "info": {
+        "name": "1.007"
+      },
       "capacity": 17,
       "fulfilled_room_constraints": [
         "seminarroom"
@@ -39,7 +47,9 @@
     },
     {
       "id": "0.008",
-      "info": {"name": "0.008"},
+      "info": {
+        "name": "0.008"
+      },
       "capacity": 26,
       "fulfilled_room_constraints": [
         "seminarroom"
@@ -48,7 +58,9 @@
     },
     {
       "id": "1.008",
-      "info": {"name": "1.008"},
+      "info": {
+        "name": "1.008"
+      },
       "capacity": 26,
       "fulfilled_room_constraints": [
         "seminarroom"
@@ -57,7 +69,9 @@
     },
     {
       "id": "0.011",
-      "info": {"name": "0.011"},
+      "info": {
+        "name": "0.011"
+      },
       "capacity": 32,
       "fulfilled_room_constraints": [
         "seminarroom"
@@ -66,25 +80,50 @@
     },
     {
       "id": "Kaiserplatz",
-      "info": {"name": "Kaiserplatz"},
+      "info": {
+        "name": "Kaiserplatz"
+      },
       "capacity": 200,
       "fulfilled_room_constraints": [
         "bbgrroom"
       ],
-      "time_constraints": ["bbgrtime"]
+      "time_constraints": [
+        "bbgrtime"
+      ]
     }
   ],
   "timeslots": {
     "info": {
       "duration": "50 min",
       "blocknames": [
-        ["Donnerstag", "Vormittag"],
-        ["Donnerstag", "Nachmittag"],
-        ["Donnerstag", "Abend"],
-        ["Freitag", "Vormittag"],
-        ["Freitag", "Nachmittag"],
-        ["Samstag", "Vormittag"],
-        ["Samstag", "Nachmittag"]
+        [
+          "Donnerstag",
+          "Vormittag"
+        ],
+        [
+          "Donnerstag",
+          "Nachmittag"
+        ],
+        [
+          "Donnerstag",
+          "Abend"
+        ],
+        [
+          "Freitag",
+          "Vormittag"
+        ],
+        [
+          "Freitag",
+          "Nachmittag"
+        ],
+        [
+          "Samstag",
+          "Vormittag"
+        ],
+        [
+          "Samstag",
+          "Nachmittag"
+        ]
       ]
     },
     "blocks": [
