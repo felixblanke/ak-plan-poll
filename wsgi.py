@@ -14,19 +14,23 @@ app.config["EXPORT_DIR"] = "export"
 app.config.from_file("config.json", load=json.load, silent=True)
 
 
+def get_data_file(poll_name: str) -> Path:
+    return Path(safe_join(app.config["DATA_DIR"], f"{poll_name}.json"))
+
+def get_export_dir(poll_name: str) -> Path:
+    return Path(safe_join(app.config["EXPORT_DIR"], poll_name))
+
 def read_ak_data(poll_name: str) -> dict | None:
-    path = Path(safe_join(app.config["DATA_DIR"], f"{poll_name}.json"))
     try:
-        with path.open("r") as ff:
+        with get_data_file(poll_name).open("r") as ff:
             return json.load(ff)
     except:
         return None
 
 
 def write_ak_data(poll_name: str, data: dict) -> dict | None:
-    path = Path(safe_join(app.config["DATA_DIR"], f"{poll_name}.json"))
     try:
-        with path.open("w") as ff:
+        with get_data_file(poll_name).open("w") as ff:
             return json.dump(data, ff, indent=2, ensure_ascii=False)
     except:
         return None
