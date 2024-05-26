@@ -12,7 +12,7 @@
     <!-- base data -->
     {% for ak in aks %}
     <div class="mb-5">
-        <label class="form-label form-label-2">{{ ak["name"] }}</label>
+        <label class="form-label form-label-2">{{ ak["info"]["name"] }}</label>
         <label class="form-label">AK Name</label>
         <input
           type="text"
@@ -20,10 +20,10 @@
           id="ak{{ loop.index0 }}_name"
           placeholder="AK Name"
           class="form-input"
-          value="{{ ak['name'] }}"
+          value="{{ ak['info']['name'] }}"
           required
         />
-        
+
         <label class="form-label">AK Beschreibung</label>
         <input
           type="text"
@@ -31,7 +31,7 @@
           id="ak{{ loop.index0 }}_description"
           placeholder="AK Beschreibung"
           class="form-input"
-          value="{{ ak['description'] }}"
+          value="{{ ak['info']['description'] }}"
         />
 
         <label class="form-label">AK Head</label>
@@ -41,7 +41,7 @@
           id="ak{{ loop.index0 }}_head"
           placeholder="AK Head"
           class="form-input"
-          value="{{ ak['head'] }}"
+          value="{{ ak['info']['head'] }}"
         />
         
         <label class="form-label">AK Duration</label>
@@ -59,7 +59,7 @@
             type="checkbox"
             id="ak{{ loop.index0 }}_reso"
             name="ak{{ loop.index0 }}_reso"
-            {{ "checked" if ak["reso"] else "" }}
+            {{ "checked" if ak['info']["reso"] else "" }}
         />
     </div>
     {% endfor %}

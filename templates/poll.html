@@ -58,15 +58,15 @@
       {% for ak in aks %}
       <div class="radio-group">
         <legend>
-          {{ ak["name"] }}
+          {{ ak["info"]["name"] }}
           <details>
             <summary>Beschreibung</summary>
-            {{ ak["description"] }}
-            {% if ak["head"] %}
+            {{ ak["info"]["description"] }}
+            {% if ak["info"]["head"] %}
               <br/><br/>
-              Verantwortlich: {{ ak["head"] }}
+              Verantwortlich: {{ ak["info"]["head"] }}
             {% endif %}
-            {% if ak["reso"] %}
+            {% if ak["info"]["reso"] %}
               <br/><br/>
               <i>Eine Resoerstellung ist angedacht.</i>
             {% endif %}

@@ -37,7 +37,7 @@ def write_ak_data(poll_name: str, data: dict) -> dict | None:
 
 def read_ak_list(data: dict, default: list[str] | None = None) -> list[str] | None:
     try:
-        return [ak["info"] for ak in data["aks"]]
+        return data["aks"]
     except KeyError:
         return default
 
