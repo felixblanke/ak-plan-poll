@@ -67,7 +67,7 @@ def read_info(data: dict, key: str, default: str | None = None) -> str | None:
 def post_result(poll_name: str):
     participant = {
         "preferences": [],
-        "required_time_constraints": [f"notblock{i}" for i in range(7)],
+        "time_constraints": [f"notblock{i}" for i in range(7)],
     }
     # TODO: replace hardcoded num blocks by reasonable code
 
@@ -89,7 +89,7 @@ def post_result(poll_name: str):
             )
         elif key.startswith("block"):
             # here we only get the checked boxes, so we remove those from the set of all boxes set above
-            participant["required_time_constraints"].remove("not" + key)
+            participant["time_constraints"].remove("not" + key)
 
     export_dir = Path(app.config["EXPORT_DIR"]) / poll_name
     export_dir.mkdir(exist_ok=True, parents=True)
@@ -205,7 +205,7 @@ def show_results(poll_name: str):
                 ak_pref_dict[ak_name][pref["preference_score"]] += 1
                 if pref["preference_score"] == 0:
                     continue
-                for time_constr in result_dict["required_time_constraints"]:
+                for time_constr in result_dict["time_constraints"]:
                     time_contr_idx = int(time_constr[len("notblock") :])
                     time_constraint_dict[ak_name][block_lst[time_contr_idx]] += 1
 
