@@ -7,18 +7,19 @@ import fire
 from wsgi import get_export_dir, read_ak_data, write_ak_data
 
 def fix_id_type(
-	data_lst: list[dict],
-	clz=str,
-	id_key: str = "id",
-	filter_fn=None,
-	replace_fn=None,	
+    data_lst: list[dict],
+    clz=str,
+    id_key: str = "id",
+    filter_fn=None,
+    replace_fn=None,
 ) -> None:
-        for entry in data_lst:
-            if id_key in entry and not isinstance(entry[id_key], clz):
-                entry[id_key] = clz(entry[id_key])
+    for entry in data_lst:
+        if id_key in entry and not isinstance(entry[id_key], clz):
+            entry[id_key] = clz(entry[id_key])
 
-            if filter_lambda is not None and filter_fn(entry[id_key]):
-                entry[id_key] = replace_fn(entry[id_key])
+        if filter_lambda is not None and filter_fn(entry[id_key]):
+            entry[id_key] = replace_fn(entry[id_key])
+
 
 def clean_data(poll_name: str, default_duration: int = 2) -> None:
     data = read_ak_data(poll_name)

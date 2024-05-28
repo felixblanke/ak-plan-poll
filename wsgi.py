@@ -169,7 +169,7 @@ def create_poll(poll_name: str):
 
             new_ak_dict = {
                 "info": new_ak_dict,
-                "duration": int(form_data["akneu_duration"])
+                "duration": int(form_data["akneu_duration"]),
             }
 
         for v in ak_dict.values():
