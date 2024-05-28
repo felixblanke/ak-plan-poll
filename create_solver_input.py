@@ -16,7 +16,8 @@ def construct_solver_json(
     data = read_ak_data(poll_name)
 
     for idx, ak in enumerate(data["aks"]):
-        ak["id"] = f"ak{idx}"
+        if "id" not in ak:
+            ak["id"] = f"ak{idx}"
         ak["properties"] = {}
 
     participants = []
