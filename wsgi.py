@@ -118,6 +118,10 @@ def get_form(poll_name: str):
         title = read_info(data, key="title", default=poll_name)
         block_info_html = read_info(data, key="block_info_html")
         ak_info_html = read_info(data, key="ak_info_html")
+        place = read_info(data, key="place")
+
+        if place:
+            title += f" in {place}"
 
         return render_template(
             "poll.html",
