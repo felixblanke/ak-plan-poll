@@ -72,14 +72,15 @@
             {% endif %}
           </details>
         </legend>
-        <input type="radio" id="ak{{ loop.index0 }}-radio0" name="ak{{ loop.index0 }}" value="0" required checked/>
-        <label for="ak{{ loop.index0 }}-radio0">Egal</label>
-        <input type="radio" id="ak{{ loop.index0 }}-radio1" name="ak{{ loop.index0 }}" value="1" required/>
-        <label for="ak{{ loop.index0 }}-radio1">Interessiert</label>
-        <input type="radio" id="ak{{ loop.index0 }}-radio2" name="ak{{ loop.index0 }}" value="2" required/>
-        <label for="ak{{ loop.index0 }}-radio2">Sehr gerne</label>
-        <input type="radio" id="ak{{ loop.index0 }}-radio3" name="ak{{ loop.index0 }}" value="-1" required/>
-        <label for="ak{{ loop.index0 }}-radio3">Erforderlich</label>
+        {% set ak_id = ak['id'] if 'id' in ak else loop.index0 %}
+        <input type="radio" id="ak{{ ak_id }}-radio0" name="ak{{ ak_id }}" value="0" required checked/>
+        <label for="ak{{ ak_id }}-radio0">Egal</label>
+        <input type="radio" id="ak{{ ak_id }}-radio1" name="ak{{ ak_id }}" value="1" required/>
+        <label for="ak{{ ak_id }}-radio1">Interessiert</label>
+        <input type="radio" id="ak{{ ak_id }}-radio2" name="ak{{ ak_id }}" value="2" required/>
+        <label for="ak{{ ak_id }}-radio2">Sehr gerne</label>
+        <input type="radio" id="ak{{ ak_id }}-radio3" name="ak{{ ak_id }}" value="-1" required/>
+        <label for="ak{{ ak_id }}-radio3">Erforderlich</label>
       </div>
       {% endfor %}
     </div>
