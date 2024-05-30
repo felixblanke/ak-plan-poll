@@ -1,7 +1,4 @@
-import json
-
 import fire
-import numpy as np
 import pandas as pd
 
 from wsgi import write_ak_data

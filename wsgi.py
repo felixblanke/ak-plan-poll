@@ -1,7 +1,6 @@
 import json
 import uuid
 from collections import defaultdict
-from itertools import chain
 from pathlib import Path
 
 from flask import Flask, redirect, render_template, request, url_for
@@ -27,7 +26,7 @@ def read_ak_data(poll_name: str) -> dict | None:
     try:
         with get_data_file(poll_name).open("r") as ff:
             return json.load(ff)
-    except:
+    except (OSError, json.decoder.JSONDecodeError):
         return None
 
 
@@ -52,14 +51,14 @@ def read_blocks(
         for slot_idx, (day, block_name) in enumerate(blocknames):
             block_dir[day].append((slot_idx, block_name))
         return block_dir
-    except:
+    except KeyError:
         return default
 
 
 def read_info(data: dict, key: str, default: str | None = None) -> str | None:
     try:
         return data["info"][key]
-    except:
+    except KeyError:
         return default
 
 
@@ -89,7 +88,8 @@ def post_result(poll_name: str):
                 }
             )
         elif key.startswith("block"):
-            # here we only get the checked boxes, so we remove those from the set of all boxes set above
+            # here we only get the checked boxes
+            # so we remove those from the set of all boxes set above
             participant["time_constraints"].remove("not" + key)
 
     export_dir = Path(app.config["EXPORT_DIR"]) / poll_name
@@ -162,7 +162,6 @@ def create_poll(poll_name: str):
             map(lambda x: x[1], sorted(ak_dict.items(), key=lambda x: x[0]))
         )
 
-        new_ak_id = max(ak_dict.keys()) + 1 if ak_dict else 0
         new_ak_dict = {}
         if form_data["akneu_name"]:
             new_ak_dict["name"] = form_data["akneu_name"]

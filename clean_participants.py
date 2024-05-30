@@ -1,6 +1,4 @@
 import json
-from pathlib import Path
-from typing import Iterable
 
 import fire
 
@@ -17,7 +15,7 @@ def fix_id_type(
         if id_key in entry and not isinstance(entry[id_key], clz):
             entry[id_key] = clz(entry[id_key])
 
-        if filter_lambda is not None and filter_fn(entry[id_key]):
+        if filter_fn is not None and filter_fn(entry[id_key]):
             entry[id_key] = replace_fn(entry[id_key])
 
 
@@ -30,13 +28,13 @@ def clean_data(poll_name: str, default_duration: int = 2) -> None:
     if "info" not in data:
         data["info"] = {}
 
-    for idx, ak in enumerate(data["aks"]):
+    for ak in data["aks"]:
         if "required_time_constraints" in ak:
             ak["time_constraints"] = ak["required_time_constraints"]
             del ak["required_time_constraints"]
-        if not "time_constraints" in ak:
+        if "time_constraints" not in ak:
             ak["time_constraints"] = []
-        if not "room_constraints" in ak:
+        if "room_constraints" not in ak:
             ak["room_constraints"] = []
 
         if "duration" not in ak:
@@ -63,7 +61,7 @@ def clean_participants(poll_name: str) -> None:
             result_dict["time_constraints"] = result_dict["required_time_constraints"]
             del result_dict["required_time_constraints"]
 
-        if not "room_constraints" in result_dict:
+        if "room_constraints" not in result_dict:
             result_dict["room_constraints"] = []
 
         with result_json.open("w") as ff:
