@@ -1,6 +1,7 @@
 import json
 import uuid
 from collections import defaultdict
+from itertools import chain
 from pathlib import Path
 
 from flask import Flask, redirect, render_template, request, url_for
@@ -10,6 +11,8 @@ from werkzeug.security import safe_join
 app = Flask(__name__)
 app.config["DATA_DIR"] = "data"
 app.config["EXPORT_DIR"] = "export"
+app.config["AK_PREFIX"] = "ak"
+app.config["BLOCK_PREFIX"] = "block"
 app.config["DEFAULT_DURATION"] = 2
 app.config.from_file("config.json", load=json.load, silent=True)
 
@@ -64,7 +67,12 @@ def read_info(data: dict, key: str, default: str | None = None) -> str | None:
 
 @app.route("/<poll_name>", methods=["POST"])
 def post_result(poll_name: str):
-    num_blocks = len(read_blocks(read_ak_data(poll_name), default={}))
+    num_blocks = sum(
+        1
+        for block in chain.from_iterable(
+            read_blocks(read_ak_data(poll_name), default={}).values()
+        )
+    )
 
     participant = {
         "preferences": [],
@@ -78,16 +86,16 @@ def post_result(poll_name: str):
     }
 
     for key, val in request.form.items():
-        if key.startswith("ak"):
+        if key.startswith(app.config["AK_PREFIX"]):
             preference_score = int(val)
             participant["preferences"].append(
                 {
-                    "ak_id": key,
+                    "ak_id": key[len(app.config["AK_PREFIX"]) :],
                     "required": preference_score == -1,
                     "preference_score": preference_score,
                 }
             )
-        elif key.startswith("block"):
+        elif key.startswith(app.config["BLOCK_PREFIX"]):
             # here we only get the checked boxes
             # so we remove those from the set of all boxes set above
             participant["time_constraints"].remove("not" + key)
@@ -217,7 +225,7 @@ def show_results(poll_name: str):
             with result_json.open("r") as ff:
                 result_dict = json.load(ff)
             for pref in result_dict["preferences"]:
-                ak_id = int(pref["ak_id"][2:])
+                ak_id = int(pref["ak_id"])
                 ak_name = ak_list[ak_id]["name"]
                 ak_pref_dict[ak_name][pref["preference_score"]] += 1
                 if pref["preference_score"] == 0:
