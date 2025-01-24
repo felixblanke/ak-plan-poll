@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Fehler – AK-Präferenzen{% endblock %}
+
+{% block header %}
+  <p class="form-label form-label-2">Fehler bei der Präferenzen-Übertragung</p>
+{% endblock %}
+
+{% block content %}
+<div class="form-wrapper">
+<p class="mb-5">Bei der Übertragung deiner Präferenzen ist ein Fehler aufgetreten! Versuche es erneut oder kontaktiere die Orga.</p>
+
+<details>
+<summary>Fehlermeldung</summary>
+
+<pre><code>
+{{ error_msg }}
+</code></pre>
+</details>
+</div>
+{% endblock %}
