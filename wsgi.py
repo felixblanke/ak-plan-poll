@@ -85,20 +85,30 @@ def post_result(poll_name: str):
         "remarks": request.form["remarks"],
     }
 
-    for key, val in request.form.items():
-        if key.startswith(app.config["AK_PREFIX"]):
-            preference_score = int(val)
-            participant["preferences"].append(
-                {
-                    "ak_id": key[len(app.config["AK_PREFIX"]) :],
-                    "required": preference_score == -1,
-                    "preference_score": preference_score,
-                }
-            )
-        elif key.startswith(app.config["BLOCK_PREFIX"]):
-            # here we only get the checked boxes
-            # so we remove those from the set of all boxes set above
-            participant["time_constraints"].remove("not" + key)
+    try:
+        for key, val in request.form.items():
+            if key.startswith(app.config["AK_PREFIX"]):
+                preference_score = int(val)
+                if preference_score not in {-1, 0, 1, 2}:
+                    raise ValueError(
+                        "Invalid preference score. Must be 0, 1, 2, or -1. "
+                        f"Got '{preference_score}'"
+                    )
+
+                ak_id = str(int(key[len(app.config["AK_PREFIX"]) :]))
+                participant["preferences"].append(
+                    {
+                        "ak_id": ak_id,
+                        "required": preference_score == -1,
+                        "preference_score": preference_score,
+                    }
+                )
+            elif key.startswith(app.config["BLOCK_PREFIX"]):
+                # here we only get the checked boxes
+                # so we remove those from the set of all boxes set above
+                participant["time_constraints"].remove("not" + key)
+    except Exception as ex:
+        return render_template("failure.html", error_msg=str(ex))
 
     export_dir = Path(app.config["EXPORT_DIR"]) / poll_name
     export_dir.mkdir(exist_ok=True, parents=True)
@@ -227,7 +237,7 @@ def show_results(poll_name: str):
             for pref in result_dict["preferences"]:
                 ak_id = pref["ak_id"]
                 if ak_id.startswith(app.config["AK_PREFIX"]):
-                    ak_id = ak_id[len(app.config["AK_PREFIX"]):]
+                    ak_id = ak_id[len(app.config["AK_PREFIX"]) :]
                 ak_id = int(ak_id)
                 ak_name = ak_list[ak_id]["info"]["name"]
                 ak_pref_dict[ak_name][pref["preference_score"]] += 1
