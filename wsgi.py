@@ -226,7 +226,7 @@ def show_results(poll_name: str):
                 result_dict = json.load(ff)
             for pref in result_dict["preferences"]:
                 ak_id = int(pref["ak_id"])
-                ak_name = ak_list[ak_id]["name"]
+                ak_name = ak_list[ak_id]["info"]["name"]
                 ak_pref_dict[ak_name][pref["preference_score"]] += 1
                 if pref["preference_score"] == 0:
                     continue
