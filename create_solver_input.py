@@ -17,14 +17,16 @@ def construct_solver_json(
 
     for idx, ak in enumerate(data["aks"]):
         if "id" not in ak:
-            ak["id"] = f"ak{idx}"
+            ak["id"] = idx
         ak["properties"] = {}
 
     participants = []
-    for result_json in get_export_dir(poll_name).glob("*.json"):
+    for participant_idx, result_json in enumerate(
+        get_export_dir(poll_name).glob("*.json")
+    ):
         with result_json.open("r") as ff:
             result_dict = json.load(ff)
-        result_dict["id"] = result_json.stem
+        result_dict["id"] = participant_idx
         if fixed_preferences:
             result_dict["preferences"].extend(fixed_preferences)
         participants.append(result_dict)

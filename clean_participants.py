@@ -4,9 +4,10 @@ import fire
 
 from wsgi import get_export_dir, read_ak_data, write_ak_data
 
+
 def fix_id_type(
     data_lst: list[dict],
-    clz=str,
+    clz=int,
     id_key: str = "id",
     filter_fn=None,
     replace_fn=None,

@@ -95,7 +95,7 @@ def post_result(poll_name: str):
                         f"Got '{preference_score}'"
                     )
 
-                ak_id = str(int(key[len(app.config["AK_PREFIX"]) :]))
+                ak_id = int(key[len(app.config["AK_PREFIX"]) :])
                 participant["preferences"].append(
                     {
                         "ak_id": ak_id,
@@ -236,7 +236,7 @@ def show_results(poll_name: str):
                 result_dict = json.load(ff)
             for pref in result_dict["preferences"]:
                 ak_id = pref["ak_id"]
-                if ak_id.startswith(app.config["AK_PREFIX"]):
+                if isinstance(ak_id, str) and ak_id.startswith(app.config["AK_PREFIX"]):
                     ak_id = ak_id[len(app.config["AK_PREFIX"]) :]
                 ak_id = int(ak_id)
                 ak_name = ak_list[ak_id]["info"]["name"]
